@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="true" android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#f5f6fa"/>
+            <corners android:radius="80dp"/>
+            <stroke android:color="#f0932b" android:width="1dp"/>
+        </shape>
+    </item>
+
+    <item android:state_enabled="true" >
+        <shape android:shape="rectangle">
+            <solid android:color="#f5f6fa"/>
+            <corners android:radius="80dp"/>
+            <stroke android:color="#130f40" android:width="1dp"/>
+        </shape>
+    </item>
+
+</selector>
