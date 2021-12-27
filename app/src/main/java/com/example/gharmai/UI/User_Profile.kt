@@ -3,15 +3,25 @@ package com.example.gharmai.UI
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.PopupMenu
-import android.widget.Toast
+import android.util.Log
+import android.widget.*
+import com.bumptech.glide.Glide
 import com.example.gharmai.R
+import com.example.gharmai.api.ServiceBuilder
+import com.example.gharmai.repository.UserRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class User_Profile : AppCompatActivity() {
 
 
     private lateinit var userImg: ImageView
+    private lateinit var editMail: TextView
+    private lateinit var editAddress: TextView
+    private lateinit var editPhone: TextView
+    private lateinit var editUsername: TextView
 
 
 
@@ -26,6 +36,64 @@ class User_Profile : AppCompatActivity() {
             loadProfilemenu()
 
         }
+        CoroutineScope(Dispatchers.Main).launch {
+
+            Toast.makeText(this@User_Profile, "profile",Toast.LENGTH_SHORT).show()
+
+            val repository = UserRepository()
+            val response = repository.getcurrentUserAPI(ServiceBuilder.userId!!)
+
+
+            Log.d("resfaf", "feafea")
+            Log.d("resfaf", response.data.toString())
+
+            if (response.success == true) {
+                //                Toast.makeText(
+                //                    context,
+                //                    response.data!!.email, Toast.LENGTH_SHORT
+                //                ).show()
+                editAddress.setText(response.data!!.addressUser)
+                editMail.setText(response.data!!.emailUser)
+                editUsername.setText(response.data!!.username)
+                editPhone.setText(response.data!!.phoneUser)
+                Log.d("BeforeSuccessCheck", response.data.toString())
+
+//                context?.let {
+//                    Glide.with(it)
+//                        .load(ServiceBuilder.BASE_URL + response.data.profile_pic)
+//                        .into(btnimg)
+//                }
+            } else {
+                withContext(Dispatchers.Main) {
+
+                    Toast.makeText(
+                        this@User_Profile,
+                        "Error", Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+
+//        btnLogout.setOnClickListener {
+//            Toast.makeText(activity, "You have been Logout Sucessfully", Toast.LENGTH_SHORT).show()
+//            startActivity(
+//                Intent(
+//                    activity,
+//                    Login::class.java
+//                )
+//            )
+//            requireActivity().finish()
+//        }
+//
+//        btnDelete.setOnClickListener {
+//
+//            deleteUser()
+//
+//
+//
+//        }
+
+//        return view
 
 
 
@@ -62,4 +130,6 @@ class User_Profile : AppCompatActivity() {
         }
         popMenu.show()
     }
+
+
 }

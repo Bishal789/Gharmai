@@ -9,10 +9,11 @@ object ServiceBuilder {
 
     //ip address for physical device
     //10.0.2.2 for emulator
-    private const val BASE_URL = "http://10.0.2.2:90/"
+        private const val BASE_URL = "http://172.25.0.188:90/"
     //    private const val BASE_URL = "http://192.168.137.68:90/"
 //    private const val BASE_URL = "http://localhost:90/"
     var token: String? =null
+    var userId: String?= null
 
     var okHttpClient = OkHttpClient.Builder()
         .connectTimeout(1, TimeUnit.MINUTES)

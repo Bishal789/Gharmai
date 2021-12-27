@@ -2,11 +2,9 @@ package com.example.gharmai.api
 
 import com.example.gharmai.entity.UserEntity
 import com.example.gharmai.response.UserResponse
+import okhttp3.MultipartBody
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface UserAPI {
 
@@ -27,4 +25,43 @@ interface UserAPI {
         @Field("email") email: String,
         @Field("password") password: String
     ): Response<UserResponse>
+
+    @GET("profile/show/{id}")
+    suspend fun getAllUserAPI(
+        @Header("Authorization")token: String,
+        @Path("id")  id: String
+    ): Response<UserResponse>
+
+    @FormUrlEncoded
+    @PUT("user/update/{id}")
+    suspend fun editUser(
+        @Header("Authorization") token: String,
+        @Path("id") id:String,
+        @Field("username") username:String,
+        @Field("email") email:String,
+        @Field("address") address:String,
+        @Field("phone") phone:String,
+    ): Response<UserResponse>
+    @PUT("profile/update/{id}")
+    suspend fun updateuser(
+        @Header("Authorization") token: String,
+        @Path("id") id: String,
+        @Body data : UserEntity
+    ): Response<UserResponse>
+
+
+    @Multipart
+    @PUT("profile/image/update/{id}")
+    suspend fun updateimage(
+        @Header("Authorization") token: String,
+        @Path("id") id: String,
+        @Part file: MultipartBody.Part
+    ): Response<UserResponse>
+
+    @DELETE("/profile/delete/{id}")
+    suspend fun deleteuser(
+        @Header("Authorization") token: String,
+        @Path("id") id: String,
+
+        ):Response<UserResponse>
 }
