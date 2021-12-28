@@ -30,6 +30,11 @@ class User_Profile : AppCompatActivity() {
         setContentView(R.layout.activity_user_profile)
 
 
+        editMail = findViewById(R.id.etEmail)
+        editAddress = findViewById(R.id.etAddress)
+        editPhone = findViewById(R.id.etPhone)
+        editUsername = findViewById(R.id.etUsername)
+
         userImg = findViewById(R.id.menuProfile)
 
         userImg.setOnClickListener {
@@ -41,28 +46,19 @@ class User_Profile : AppCompatActivity() {
             Toast.makeText(this@User_Profile, "profile",Toast.LENGTH_SHORT).show()
 
             val repository = UserRepository()
-            val response = repository.getcurrentUserAPI(ServiceBuilder.userId!!)
+            val response = repository.getCurrentUserAPI(ServiceBuilder.userId!!)
 
 
             Log.d("resfaf", "feafea")
             Log.d("resfaf", response.data.toString())
 
-            if (response.success == true) {
-                //                Toast.makeText(
-                //                    context,
-                //                    response.data!!.email, Toast.LENGTH_SHORT
-                //                ).show()
-                editAddress.setText(response.data!!.addressUser)
-                editMail.setText(response.data!!.emailUser)
-                editUsername.setText(response.data!!.username)
-                editPhone.setText(response.data!!.phoneUser)
                 Log.d("BeforeSuccessCheck", response.data.toString())
+            if (response.success == true) {
 
-//                context?.let {
-//                    Glide.with(it)
-//                        .load(ServiceBuilder.BASE_URL + response.data.profile_pic)
-//                        .into(btnimg)
-//                }
+                editAddress.text = response.data!!.addressUser
+                editMail.text = response.data!!.emailUser
+                editUsername.text = response.data!!.username
+                editPhone.text = response.data!!.phoneUser
             } else {
                 withContext(Dispatchers.Main) {
 

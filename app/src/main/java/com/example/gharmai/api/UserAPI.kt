@@ -22,11 +22,12 @@ interface UserAPI {
     @POST("user/login")
     suspend fun loginUser(
         //send parameters
-        @Field("email") email: String,
-        @Field("password") password: String
+//        @Body user: UserEntity
+        @Field("emailUser") email: String,
+        @Field("passwordUser") password: String
     ): Response<UserResponse>
 
-    @GET("profile/show/{id}")
+    @GET("profile/single/{id}")
     suspend fun getAllUserAPI(
         @Header("Authorization")token: String,
         @Path("id")  id: String

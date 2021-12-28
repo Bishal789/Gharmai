@@ -24,7 +24,7 @@ class UserRepository : ApiRequest(){
             userApi.loginUser(email, password)
         }
     }
-    suspend fun getcurrentUserAPI(id: String): UserResponse {
+    suspend fun getCurrentUserAPI(id: String): UserResponse {
         return apiRequest {
             userApi.getAllUserAPI(ServiceBuilder.token!!, id)
         }

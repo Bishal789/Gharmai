@@ -2,12 +2,12 @@ package com.example.gharmai.entity
 
 data class UserEntity(
 
-    val _id: String = "",
-    val username: String?,
-    val addressUser: String?,
-    val phoneUser: String?,
-    val emailUser: String?,
-    val passwordUser: String?,
-    val genderUser: String?
+    val _id: String? = null,
+    val username: String?= null,
+    val addressUser: String?= null,
+    val phoneUser: String?= null,
+    val emailUser: String?= null,
+    val passwordUser: String?= null,
+    val genderUser: String?= null
 ) {
 }
