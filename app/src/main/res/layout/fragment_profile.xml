@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.User_editProfile">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.ProfileFragment">
+
 
     <LinearLayout
-        android:id="@+id/linearLayout6"
-        android:layout_width="411dp"
-        android:layout_height="269dp"
+        android:id="@+id/linearLayout2"
+        android:layout_width="412dp"
+        android:layout_height="251dp"
+        android:layout_marginTop="72dp"
         android:layout_weight="0.4"
         android:background="@color/black"
         android:gravity="center_horizontal"
@@ -20,34 +22,42 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/menuProfile"
+            android:layout_width="47dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="155dp"
+            android:src="@drawable/ic_menu" />
+
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/upImage"
-            android:layout_width="203dp"
-            android:layout_height="173dp"
-            android:layout_marginTop="20dp"
+
+            android:id="@+id/userprofile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:src="@drawable/noimage" />
 
-        <EditText
-
-            android:id="@+id/eetUsername"
+        <TextView
+            android:id="@+id/etUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:hint="Bishal"
+            android:layout_marginTop="10dp"
+            android:text="Bishal"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout7"
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="23dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <ImageView
             android:layout_width="50dp"
@@ -63,18 +73,19 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/iiemail"
+                android:id="@+id/iemail"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Email"
                 android:textSize="20dp" />
 
-            <EditText
-                android:id="@+id/eetEmail"
+            <TextView
+                android:id="@+id/etEmail"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Bishal@gmail.com"
-                android:minHeight="48dp"
+                android:text="Bishal@gmail.com"
                 android:textSize="20dp" />
 
         </LinearLayout>
@@ -82,13 +93,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout8"
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="28dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <ImageView
             android:layout_width="50dp"
@@ -110,13 +123,11 @@
                 android:text="Address"
                 android:textSize="20dp" />
 
-            <EditText
-                android:id="@+id/eetAddress"
-
+            <TextView
+                android:id="@+id/etAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Bhainsepati, Lalitpur"
-                android:minHeight="48dp"
+                android:text="Bhainsepati, Lalitpur"
                 android:textSize="20dp" />
 
         </LinearLayout>
@@ -124,13 +135,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <ImageView
             android:layout_width="50dp"
@@ -146,49 +158,21 @@
             android:orientation="vertical">
 
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Phone"
                 android:textSize="20dp" />
 
-            <EditText
-                android:id="@+id/eetPhone"
+            <TextView
+                android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="+000 000 000"
-                android:minHeight="48dp"
+                android:text="+000 000 000"
                 android:textSize="20dp" />
 
         </LinearLayout>
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/btnUpdate"
-        android:layout_width="102dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout9"
-        app:srcCompat="@drawable/tick" />
-
-    <TextView
-        android:id="@+id/update"
-        android:layout_width="114dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:text="Update"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUpdate" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,5 +9,6 @@ data class UserEntity(
     val emailUser: String?= null,
     val passwordUser: String?= null,
     val genderUser: String?= null
+//    var profile_pic: String?=null
 ) {
 }
