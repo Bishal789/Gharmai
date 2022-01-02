@@ -9,6 +9,7 @@ import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.gharmai.R
 import com.example.gharmai.api.ServiceBuilder
+import com.example.gharmai.entity.UserEntity
 import com.example.gharmai.repository.UserRepository
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
@@ -55,15 +56,17 @@ class LoginActivity : AppCompatActivity() {
                     // Save token
 
                     ServiceBuilder.token = "Bearer ${response.token}"
+                    ServiceBuilder.userId = response.userId
                     //Save username and password in shared preferences
                     // saveUsernamePassword()
+
                     startActivity(
                         Intent(
                             this@LoginActivity,
-                            SplashScreen::class.java
+                            Dashboard::class.java
                         )
                     )
-                    Toast.makeText(this@LoginActivity, "Login Success" , Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this@LoginActivity, "Login Success" , Toast.LENGTH_SHORT).show()
                     finish()
                 } else {
                     withContext(Dispatchers.Main) {
