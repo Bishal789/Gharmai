@@ -62,8 +62,7 @@ class LoginActivity : AppCompatActivity() {
 
                     startActivity(
                         Intent(
-                            this@LoginActivity,
-                            Dashboard::class.java
+                            this@LoginActivity, Dashboard::class.java
                         )
                     )
 //                    Toast.makeText(this@LoginActivity, "Login Success" , Toast.LENGTH_SHORT).show()
