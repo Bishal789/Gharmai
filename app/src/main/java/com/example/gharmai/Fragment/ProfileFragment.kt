@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.bumptech.glide.Glide
 import com.example.gharmai.R
+import com.example.gharmai.UI.LoginActivity
 import com.example.gharmai.UI.User_editProfile
 import com.example.gharmai.api.ServiceBuilder
 import com.example.gharmai.repository.UserRepository
@@ -32,6 +33,7 @@ class ProfileFragment : Fragment() {
     private lateinit var editAddress: TextView
     private lateinit var editPhone: TextView
     private lateinit var editUsername: TextView
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -108,11 +110,28 @@ class ProfileFragment : Fragment() {
             } else if (item.itemId == R.id.delete_profile) {
 
                 val builder = android.app.AlertDialog.Builder(context)
-                builder.setTitle("Are You Sure want to Delete your Profile?")
+                builder.setTitle("Delete Profile")
+                builder.setMessage("Are you sure you want to delete your profile??")
                 builder.setIcon(android.R.drawable.ic_dialog_alert)
                 builder.setPositiveButton("Yes"){_,_->
-
-                    Toast.makeText(context, "Profile Successfully Deleted", Toast.LENGTH_SHORT).show()
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val userrepo = UserRepository()
+                        val response = userrepo.deleteuser(ServiceBuilder.userId!!)
+                        try {
+                            if (response.success == true) {
+                                startActivity(Intent(context,LoginActivity::class.java))
+                                requireActivity().finish()
+                                withContext(Dispatchers.Main) {
+                                    Toast.makeText(context, "User Deleted Successfully", Toast.LENGTH_SHORT)
+                                        .show()
+                                }
+                            }
+                        } catch (ex: Exception) {
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(context, ex.toString(), Toast.LENGTH_LONG).show()
+                            }
+                        }
+                    }
                 }
                 builder.setNegativeButton("No"){_,_->
                     Toast.makeText(context, "Action Cancelled", Toast.LENGTH_SHORT).show()

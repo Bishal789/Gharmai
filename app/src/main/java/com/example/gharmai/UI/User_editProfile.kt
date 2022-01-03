@@ -9,21 +9,42 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
+import android.webkit.MimeTypeMap
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import com.example.gharmai.Fragment.ProfileFragment
 import com.example.gharmai.R
+import com.example.gharmai.api.ServiceBuilder
+import com.example.gharmai.entity.UserEntity
+import com.example.gharmai.repository.UserRepository
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+
 
 class User_editProfile : AppCompatActivity() {
 
-    private lateinit var btnUpdate:ImageView
+    private lateinit var btnUpdate: ImageView
     private lateinit var cameraPopup: ImageView
+    private lateinit var upImage: ImageView
+    private lateinit var eetUsername: EditText
+    private lateinit var eetAddress: EditText
+    private lateinit var eetPhone: EditText
+    private lateinit var eetEmail: EditText
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +56,11 @@ class User_editProfile : AppCompatActivity() {
 
         btnUpdate = findViewById(R.id.btnUpdate)
         cameraPopup = findViewById(R.id.upImage)
+        upImage = findViewById(R.id.upImage)
+        eetUsername = findViewById(R.id.eetUsername)
+        eetAddress = findViewById(R.id.eetAddress)
+        eetPhone = findViewById(R.id.eetPhone)
+        eetEmail = findViewById(R.id.eetEmail)
 
         cameraPopup.setOnClickListener {
             loadpopupCameramenu()
@@ -42,9 +68,93 @@ class User_editProfile : AppCompatActivity() {
 
 
         btnUpdate.setOnClickListener {
-            Toast.makeText(this, "Profile Updated", Toast.LENGTH_SHORT).show()
+            updateUser()
+//            Toast.makeText(this, "Profile Updated", Toast.LENGTH_SHORT).show()
         }
     }
+
+
+    // --------------------------- Updating user profile --------------------------
+    private fun updateUser() {
+        val Username = eetUsername.text.toString()
+        val Email = eetEmail.text.toString()
+        val Address = eetAddress.text.toString()
+        val Phone = eetPhone.text.toString()
+
+        val data = UserEntity(
+            username = Username, emailUser = Email, addressUser = Address, phoneUser = Phone
+        )
+
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val userrepo = UserRepository()
+                val userres = userrepo.updateuser(ServiceBuilder.userId!!, data)
+
+                if (userres.success == true) {
+
+
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@User_editProfile, "User Updated", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                    Updateimage(ServiceBuilder.userId!!)
+
+                    val Intent = Intent(this@User_editProfile, Dashboard::class.java)
+                    startActivity(Intent)
+                }
+            } catch (ex: Exception) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@User_editProfile, ex.toString(), Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+        }
+    }
+
+    private fun Updateimage(userId: String) {
+        val file = File(imageUrl)
+        Log.d("phoarwto", file.toString())
+        val mimeType = getMimeType(file)
+        val reqFile = RequestBody.create(MediaType.parse(mimeType), file)
+        val body = MultipartBody.Part.createFormData("file", file.name, reqFile)
+
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val userrepo = UserRepository()
+                Log.d("Userrerpo", userrepo.toString())
+                val response = userrepo.updateimage(userId, body)
+                if (response.success == true) {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(
+                            this@User_editProfile,
+                            "Update successful",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+            } catch (ex: Exception) {
+                withContext(Dispatchers.Main) {
+                    Log.d("Mero Error ", ex.localizedMessage)
+                    Toast.makeText(
+                        this@User_editProfile,
+                        ex.localizedMessage,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+    }
+
+    fun getMimeType(file: File): String? {
+        var type: String? = null
+        val extension = MimeTypeMap.getFileExtensionFromUrl(file.path)
+        if (extension != null) {
+            type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension)
+        }
+        return type
+    }
+
+    // -------------- end of updating user update -----------------------
 
     private fun loadpopupCameramenu() {
         val popMenu = PopupMenu(this, cameraPopup)
@@ -109,25 +219,24 @@ class User_editProfile : AppCompatActivity() {
     }
 
 
-
     private var imageUrl = ""
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         //Gallery ko image Image view ma dekhauni
-        if(resultCode == Activity.RESULT_OK){
-            if (requestCode == GALLERY_CODE && data!=null){
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == GALLERY_CODE && data != null) {
                 val selectedImage = data.data
                 val filepathColumn = arrayOf(MediaStore.Images.Media.DATA)
                 val contentResolver = contentResolver
-                val cursor = contentResolver.query(selectedImage!!,filepathColumn,null,null,null)
+                val cursor =
+                    contentResolver.query(selectedImage!!, filepathColumn, null, null, null)
                 cursor!!.moveToFirst()
                 val columnIndex = cursor.getColumnIndex(filepathColumn[0])
                 imageUrl = cursor.getString(columnIndex)
                 cameraPopup.setImageBitmap(BitmapFactory.decodeFile(imageUrl))
                 cursor.close()
-            }
-            else if (requestCode == CAMER_COE && data!= null){
-                val imageBitmap = data.extras?.get("data")as Bitmap
+            } else if (requestCode == CAMER_COE && data != null) {
+                val imageBitmap = data.extras?.get("data") as Bitmap
                 val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
                 val file = bitmapTofile(imageBitmap, "$timeStamp.png")
                 imageUrl = file!!.absolutePath
@@ -135,11 +244,12 @@ class User_editProfile : AppCompatActivity() {
             }
         }
     }
+
     private fun bitmapTofile(
         bitmap: Bitmap,
         fileNametoSave: String
-    ): File?{
-        var file: File?=null
+    ): File? {
+        var file: File? = null
         return try {
             file = File(
                 getExternalFilesDir(Environment.DIRECTORY_PICTURES).toString() + File.separator + fileNametoSave
@@ -147,7 +257,7 @@ class User_editProfile : AppCompatActivity() {
             file.createNewFile()
             //Convert bitmap to byte Array
             val bos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.PNG,100,bos)
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, bos)
             val bitMapData = bos.toByteArray()
             //write the byte in file
             val fos = FileOutputStream(file)
@@ -155,7 +265,7 @@ class User_editProfile : AppCompatActivity() {
             fos.flush()
             fos.close()
             file // it will return null
-        }catch (e:java.lang.Exception){
+        } catch (e: java.lang.Exception) {
             e.printStackTrace()
             file
         }
