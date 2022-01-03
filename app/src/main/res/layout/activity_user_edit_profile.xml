@@ -112,7 +112,6 @@
 
             <EditText
                 android:id="@+id/eetAddress"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Bhainsepati, Lalitpur"
@@ -146,7 +145,6 @@
             android:orientation="vertical">
 
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Phone"
