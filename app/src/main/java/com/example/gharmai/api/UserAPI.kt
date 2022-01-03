@@ -59,7 +59,7 @@ interface UserAPI {
         @Part file: MultipartBody.Part
     ): Response<UserResponse>
 
-    @DELETE("/profile/delete/{id}")
+    @DELETE("profile/delete/{id}")
     suspend fun deleteuser(
         @Header("Authorization") token: String,
         @Path("id") id: String,
