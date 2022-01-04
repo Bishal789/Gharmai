@@ -70,30 +70,6 @@ class User_Profile : AppCompatActivity() {
             }
         }
 
-//        btnLogout.setOnClickListener {
-//            Toast.makeText(activity, "You have been Logout Sucessfully", Toast.LENGTH_SHORT).show()
-//            startActivity(
-//                Intent(
-//                    activity,
-//                    Login::class.java
-//                )
-//            )
-//            requireActivity().finish()
-//        }
-//
-//        btnDelete.setOnClickListener {
-//
-//            deleteUser()
-//
-//
-//
-//        }
-
-//        return view
-
-
-
-
     }
     private fun loadProfilemenu() {
         val popMenu = PopupMenu(this, userImg)

@@ -69,7 +69,7 @@ class ProfileFragment : Fragment() {
             if (response.success == true) {
 
                 editAddress.setText(response.data!!.addressUser)
-                editMail.setText(response.data!!.emailUser)
+                editMail.setText(response.data.emailUser)
                 editUsername.setText(response.data!!.username)
                 editPhone.setText(response.data!!.phoneUser)
 
@@ -144,6 +144,7 @@ class ProfileFragment : Fragment() {
         }
         popMenu.show()
     }
+
 
 
 }
