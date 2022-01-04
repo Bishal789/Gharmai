@@ -71,6 +71,36 @@ class User_editProfile : AppCompatActivity() {
             updateUser()
 //            Toast.makeText(this, "Profile Updated", Toast.LENGTH_SHORT).show()
         }
+        CoroutineScope(Dispatchers.IO).launch {
+
+            try{
+                val repository = UserRepository()
+                val response = repository.getCurrentUserAPI(ServiceBuilder.userId!!)
+
+
+                if(response.success==true){
+
+                    withContext(Dispatchers.Main) {
+                        eetUsername.setText(response.data?.username)
+                        eetEmail.setText(response.data?.emailUser)
+                        eetAddress.setText(response.data?.addressUser)
+                        eetPhone.setText(response.data?.phoneUser)
+//                        val imageUrl = ServiceBuilder.BASE_URL+response.data?.image
+//                        this.let {
+//                            Glide.with(Activity()).asBitmap().load(imageUrl).into(
+//                                BitmapImageViewTarget(ivImageview)
+//                            )
+//                        }
+
+                    }
+                }
+            }catch(ex : Exception){
+                withContext(Dispatchers.Main){
+                    Log.d("error", ex.printStackTrace().toString())
+                    Toast.makeText(this@User_editProfile, ex.toString(), Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
 
@@ -97,7 +127,7 @@ class User_editProfile : AppCompatActivity() {
                         Toast.makeText(this@User_editProfile, "User Updated", Toast.LENGTH_SHORT)
                             .show()
                     }
-                    Updateimage(ServiceBuilder.userId!!)
+//                    Updateimage(ServiceBuilder.userId!!)
 
                     val Intent = Intent(this@User_editProfile, Dashboard::class.java)
                     startActivity(Intent)

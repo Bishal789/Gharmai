@@ -25,7 +25,7 @@ abstract class ApiRequest {
                 message.append("\n")
             }
             message.append("Error code : ${response.code()}")
-            throw IOException(error)
+            throw IOException(message.toString())
         }
     }
 }
