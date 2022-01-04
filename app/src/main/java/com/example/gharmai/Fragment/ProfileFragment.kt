@@ -115,10 +115,20 @@ class ProfileFragment : Fragment() {
                 builder.setIcon(android.R.drawable.ic_dialog_alert)
                 builder.setPositiveButton("Yes"){_,_->
                     CoroutineScope(Dispatchers.IO).launch {
+
                         val userrepo = UserRepository()
                         val response = userrepo.deleteuser(ServiceBuilder.userId!!)
                         try {
                             if (response.success == true) {
+
+                        val userRepo = UserRepository()
+                        val response = userRepo.deleteuser(ServiceBuilder.userId!!)
+                        try {
+
+                            if (response.success == true) {
+
+
+
                                 startActivity(Intent(context,LoginActivity::class.java))
                                 requireActivity().finish()
                                 withContext(Dispatchers.Main) {
@@ -132,6 +142,9 @@ class ProfileFragment : Fragment() {
                             }
                         }
                     }
+
+                    Toast.makeText(context, "Profile Successfully Deleted", Toast.LENGTH_SHORT).show()
+
                 }
                 builder.setNegativeButton("No"){_,_->
                     Toast.makeText(context, "Action Cancelled", Toast.LENGTH_SHORT).show()
