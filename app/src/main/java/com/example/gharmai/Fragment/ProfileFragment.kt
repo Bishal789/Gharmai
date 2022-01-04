@@ -113,7 +113,7 @@ class ProfileFragment : Fragment() {
                 builder.setTitle("Delete Profile")
                 builder.setMessage("Are you sure you want to delete your profile??")
                 builder.setIcon(android.R.drawable.ic_dialog_alert)
-                builder.setPositiveButton("Yes"){_,_->
+                builder.setPositiveButton("Yes") { _, _ ->
                     CoroutineScope(Dispatchers.IO).launch {
 
                         val userrepo = UserRepository()
@@ -121,42 +121,59 @@ class ProfileFragment : Fragment() {
                         try {
                             if (response.success == true) {
 
-                        val userRepo = UserRepository()
-                        val response = userRepo.deleteuser(ServiceBuilder.userId!!)
-                        try {
+                                val userRepo = UserRepository()
+                                val response = userRepo.deleteuser(ServiceBuilder.userId!!)
+                                try {
 
-                            if (response.success == true) {
+                                    if (response.success == true) {
 
 
-
-                                startActivity(Intent(context,LoginActivity::class.java))
-                                requireActivity().finish()
-                                withContext(Dispatchers.Main) {
-                                    Toast.makeText(context, "User Deleted Successfully", Toast.LENGTH_SHORT)
-                                        .show()
+                                        startActivity(Intent(context, LoginActivity::class.java))
+                                        requireActivity().finish()
+                                        withContext(Dispatchers.Main) {
+                                            Toast.makeText(
+                                                context,
+                                                "User Deleted Successfully",
+                                                Toast.LENGTH_SHORT
+                                            )
+                                                .show()
+                                        }
+                                    }
+                                } catch (ex: Exception) {
+                                    withContext(Dispatchers.Main) {
+                                        Toast.makeText(context, ex.toString(), Toast.LENGTH_LONG)
+                                            .show()
+                                    }
                                 }
                             }
-                        } catch (ex: Exception) {
+
+                            Toast.makeText(
+                                context,
+                                "Profile Successfully Deleted",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                        }
+                        catch (ex: Exception) {
                             withContext(Dispatchers.Main) {
-                                Toast.makeText(context, ex.toString(), Toast.LENGTH_LONG).show()
+                                Toast.makeText(context, ex.toString(), Toast.LENGTH_LONG)
+                                    .show()
                             }
                         }
+
                     }
-
-                    Toast.makeText(context, "Profile Successfully Deleted", Toast.LENGTH_SHORT).show()
-
                 }
-                builder.setNegativeButton("No"){_,_->
-                    Toast.makeText(context, "Action Cancelled", Toast.LENGTH_SHORT).show()
+                builder.setNegativeButton("No") { _, _ ->
+                    android.widget.Toast.makeText(context, "Action Cancelled", android.widget.Toast.LENGTH_SHORT).show()
                 }
                 val alertDialog: android.app.AlertDialog = builder.create()
                 alertDialog.setCancelable(false)
                 alertDialog.show()
             }
             true
+
         }
         popMenu.show()
+
     }
-
-
 }
