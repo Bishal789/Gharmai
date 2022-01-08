@@ -102,17 +102,17 @@
                                 android:textColor="#2980b9"
                                 android:textSize="11dp" />
 
-                            <TextView
-                                android:layout_width="251dp"
-                                android:layout_height="43dp"
-                                android:layout_alignParentTop="true"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="31dp"
-                                android:layout_marginEnd="0dp"
-                                android:gravity="center"
-                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                android:textSize="10dp"
-                                android:textStyle="bold" />
+                                <TextView
+                                    android:layout_width="251dp"
+                                    android:layout_height="43dp"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginTop="31dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:gravity="center"
+                                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                    android:textSize="10dp"
+                                    android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="94dp"
