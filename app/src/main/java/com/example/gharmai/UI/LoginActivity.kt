@@ -23,17 +23,19 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var emailLogin: EditText
     private lateinit var passwordLogin: EditText
     private lateinit var linearLayout: ConstraintLayout
+    private lateinit var loginLinear: LinearLayout
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_user_login)
 
         DonthaveAccount = findViewById(R.id.dnthave)
         loginButton = findViewById(R.id.button2)
         emailLogin = findViewById(R.id.emailLogin)
         passwordLogin = findViewById(R.id.passwordLogin)
         linearLayout = findViewById(R.id.linearLayout)
+        loginLinear = findViewById(R.id.linearLayout5)
 
 
         DonthaveAccount.setOnClickListener {
@@ -42,6 +44,8 @@ class LoginActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             login()
         }
+
+//        loginLinear.setAlpha(0.5f)
     }
     private fun login(){
 

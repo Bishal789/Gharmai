@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -29,10 +28,17 @@
         android:theme="@style/Theme.Gharmai"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".InsideUI.salon_women"
+            android:exported="true" />
+        <activity
             android:name=".UI.Dashboard"
-            android:exported="true" >
+            android:exported="true">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity
@@ -45,11 +51,6 @@
             android:name=".UI.LoginChoice"
             android:exported="true">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity
@@ -57,7 +58,11 @@
             android:exported="true" />
         <activity
             android:name=".UI.SplashScreen"
-            android:exported="true" />
+            android:exported="true" >
+
+
+
+        </activity>
     </application>
 
 </manifest>
