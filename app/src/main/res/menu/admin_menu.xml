@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/user_section"
+        android:icon="@drawable/ic_user"
+        android:title="User" />
+
+    <item
+        android:id="@+id/worker_section"
+        android:icon="@drawable/ic_worker"
+        android:title="Worker" />
+
+    <item
+        android:id="@+id/logout_admin"
+        android:icon="@drawable/logout"
+        android:title="Log Out" />
+
+
+</menu>

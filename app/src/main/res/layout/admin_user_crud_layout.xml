@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="20dp"
+    android:background="#ecf0f1"
+    android:layout_height="220dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/USER_IMAGE"
+        android:layout_width="143dp"
+        android:layout_height="154dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="58dp"
+        android:background="@drawable/noimage" />
+
+    <TextView
+        android:id="@+id/USERNAME_ADMIN"
+        android:layout_width="280dp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="186dp"
+        android:gravity="center"
+        android:text="Username"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/USER_EMAIL_ADMIN"
+        android:layout_width="280dp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="156dp"
+        android:gravity="center"
+        android:text="Username@user.com"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/USER_ADDRESS_ADMIN"
+        android:layout_width="280dp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="125dp"
+        android:gravity="center"
+        android:text="User_address"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/USER_CONTACT_ADMIN"
+        android:layout_width="280dp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="95dp"
+        android:gravity="center"
+        android:text="User_Contact"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/USER_GENDER_ADMIN"
+        android:layout_width="280dp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="63dp"
+        android:gravity="center"
+        android:text="User_Gender"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/button_EDIT_ADMIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="284dp"
+        android:layout_marginBottom="1dp"
+        android:backgroundTint="#2ecc71"
+        android:textColor="@color/black"
+        android:text="Edit" />
+
+    <Button
+        android:id="@+id/button_DELETE_ADMIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="#e74c3c"
+        android:textColor="@color/black"
+        android:layout_marginBottom="0dp"
+        android:text="Delete" />
+
+
+</RelativeLayout>

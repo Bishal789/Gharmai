@@ -11,7 +11,6 @@
         android:id="@+id/linearLayout2"
         android:layout_width="412dp"
         android:layout_height="251dp"
-        android:layout_marginTop="72dp"
         android:layout_weight="0.4"
         android:background="@color/black"
         android:gravity="center_horizontal"
@@ -135,6 +134,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -173,6 +173,16 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="169dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="60dp"
+        android:text="Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
