@@ -59,9 +59,9 @@ class RegisterTest {
 
         Thread.sleep(2000)
 
-//        val checkText =
-//            Espresso.onView(Matchers.allOf(withId(R.id.loginscreen), ViewMatchers.isDisplayed()))
-//        checkText.check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+        val checkText =
+            Espresso.onView(Matchers.allOf(withId(R.id.linearLayout), ViewMatchers.isDisplayed()))
+        checkText.check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
 
         Thread.sleep(5000)
     }
