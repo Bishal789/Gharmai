@@ -1,7 +1,9 @@
 package com.example.gharmai
 
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -19,27 +21,28 @@ import org.junit.runners.JUnit4
 class LoginTest {
     @get:Rule
     val testRule1 = ActivityScenarioRule(LoginActivity::class.java)
+
     @Test
     fun loginCheck() {
 
-        Espresso.onView(withId(R.id.emailLogin))
-            .perform(ViewActions.typeText("123"))
+        onView(withId(R.id.emailLogin))
+            .perform(ViewActions.typeText("admin@gmail.com"))
         Thread.sleep(1000)
         Espresso.closeSoftKeyboard()
 
-        Espresso.onView(withId(R.id.passwordLogin))
-            .perform(ViewActions.typeText("123"))
-        ViewActions.closeSoftKeyboard()
+        onView(withId(R.id.passwordLogin))
+            .perform(ViewActions.typeText("password"))
+//        ViewActions.closeSoftKeyboard()
         Thread.sleep(1000)
 
 
-        Espresso.onView(withId(R.id.button2)).perform(ViewActions.click())
+        Espresso.closeSoftKeyboard()
+        onView(withId(R.id.button2)).perform(click())
 
         Thread.sleep(2000)
 
-//        val checkText =
-//            Espresso.onView(Matchers.allOf(withId(R.id.drawer), ViewMatchers.isDisplayed()))
-//        checkText.check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+        val checkText = onView(Matchers.allOf(withId(R.id.relative), ViewMatchers.isDisplayed()))
+        checkText.check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
 
         Thread.sleep(5000)
     }
