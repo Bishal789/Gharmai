@@ -28,15 +28,20 @@
         android:theme="@style/Theme.Gharmai"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AdminUI.add_services"
+            android:exported="true" />
+        <activity
+            android:name=".AdminUI.admin_splashscreen"
+            android:exported="true" />
+        <activity
+            android:name=".AdminUI.Admin_dasboard"
+            android:exported="true" />
+        <activity
             android:name=".InsideUI.salon_women"
             android:exported="true" />
         <activity
             android:name=".UI.Dashboard"
-            android:exported="true">
-
-
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".UI.User_editProfile"
             android:exported="true" />
@@ -45,25 +50,18 @@
             android:exported="true" />
         <activity
             android:name=".UI.LoginChoice"
-            android:exported="true">
-
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".UI.LoginActivity"
             android:exported="true" />
         <activity
             android:name=".UI.SplashScreen"
-            android:exported="true" >
-
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
-
         </activity>
     </application>
 

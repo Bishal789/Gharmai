@@ -32,7 +32,11 @@ class gharmaiunittest {
             emailUser = "bhuwan123@gmail.com" ,
             passwordUser = "123"
         )
+<<<<<<< HEAD
         val res = Userrepo.registerUser(user=data)
+=======
+        val res = Userrepo.registerUser(data)
+>>>>>>> 0ee3650d9eb09ba1d8dfb2e16c905702f92daf95
         val expected = true
         val actual = res.success
 

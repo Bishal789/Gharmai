@@ -21,6 +21,7 @@ import org.junit.runners.JUnit4
 class LoginTest {
     @get:Rule
     val testRule1 = ActivityScenarioRule(LoginActivity::class.java)
+
     @Test
     fun loginCheck() {
 
@@ -31,7 +32,11 @@ class LoginTest {
 
         onView(withId(R.id.passwordLogin))
             .perform(ViewActions.typeText("password"))
+<<<<<<< HEAD
+//        ViewActions.closeSoftKeyboard()
+=======
         ViewActions.closeSoftKeyboard()
+>>>>>>> 11cfec93e1b528f3b590a09c72f52155faab3d46
         Thread.sleep(1000)
 
 
@@ -40,8 +45,12 @@ class LoginTest {
 
         Thread.sleep(2000)
 
+<<<<<<< HEAD
+        val checkText = onView(Matchers.allOf(withId(R.id.relative), ViewMatchers.isDisplayed()))
+=======
         val checkText =
             onView(Matchers.allOf(withId(R.id.relative), ViewMatchers.isDisplayed()))
+>>>>>>> 11cfec93e1b528f3b590a09c72f52155faab3d46
         checkText.check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
 
         Thread.sleep(5000)

@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.PopupMenu
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.RequiresApi
 import com.bumptech.glide.Glide
 import com.example.gharmai.R
@@ -33,6 +30,7 @@ class ProfileFragment : Fragment() {
     private lateinit var editAddress: TextView
     private lateinit var editPhone: TextView
     private lateinit var editUsername: TextView
+    private lateinit var logout: Button
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -49,6 +47,13 @@ class ProfileFragment : Fragment() {
         editUsername = view.findViewById(R.id.etUsername)
         profileImage = view.findViewById(R.id.userprofile)
         menuImg = view.findViewById(R.id.menuProfile)
+        logout = view.findViewById(R.id.logout)
+
+
+
+        logout.setOnClickListener {
+            startActivity(Intent(activity,LoginActivity::class.java))
+        }
 //
         menuImg.setOnClickListener {
             loadProfilemenu()
