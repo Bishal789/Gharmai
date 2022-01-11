@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.gharmai.AdminUI.admin_splashscreen
 import com.example.gharmai.R
 import com.example.gharmai.api.ServiceBuilder
 import com.example.gharmai.entity.UserEntity
@@ -51,6 +52,10 @@ class LoginActivity : AppCompatActivity() {
 
         val email = emailLogin.text.toString()
         val password = passwordLogin.text.toString()
+
+        if (email == "admin" && password =="admin"){
+            startActivity(Intent(this@LoginActivity,admin_splashscreen::class.java))
+        }
 
         CoroutineScope(Dispatchers.IO).launch {
             try {

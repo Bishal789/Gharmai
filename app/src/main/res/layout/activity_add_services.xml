@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context=".AdminUI.add_services">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout12"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/noimage" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/ADMIN_SERVICE_NAME"
+        android:layout_width="157dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Service Name"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout12" />
+
+    <EditText
+        android:id="@+id/ADMIN_ETSERVICENAME"
+        android:layout_width="363dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Service Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ADMIN_SERVICE_NAME" />
+
+    <TextView
+        android:id="@+id/ADMIN_SERVICE_PRICE"
+        android:layout_width="157dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Service Price"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ADMIN_ETSERVICENAME"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/ADMIN_ETSERVICE_PRICE"
+        android:layout_width="363dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Service Price"
+        android:inputType="number"
+        android:paddingStart="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ADMIN_SERVICE_PRICE"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/ADMIN_ABOUT_SERVICE"
+        android:layout_width="157dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="13dp"
+        android:gravity="center"
+        android:text="Service Name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ADMIN_ETSERVICE_PRICE" />
+
+    <EditText
+        android:id="@+id/ADMIN_ETABOUT_SERVICE"
+        android:layout_width="347dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+
+        android:hint="About Service"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ADMIN_ABOUT_SERVICE"
+        tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/ADMIN_ADD_SERVICE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Add"
+        android:textColor="@color/black"
+        android:backgroundTint="#2ecc71"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ADMIN_ETABOUT_SERVICE"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
