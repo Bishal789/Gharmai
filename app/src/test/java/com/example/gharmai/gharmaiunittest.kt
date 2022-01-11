@@ -1,7 +1,9 @@
 package com.example.gharmai
 
 import com.example.gharmai.api.ServiceBuilder
+import com.example.gharmai.entity.UserEntity
 import com.example.gharmai.repository.UserRepository
+import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Test
 
@@ -21,21 +23,21 @@ class gharmaiunittest {
 //        Assert.assertEquals(expected, actual)
 //    }
 //
-//    @Test
-//    fun testregister() = runBlocking {
-//        Userrepo = UserRepository()
-//
-//        val data= User(
-//            username = "Bhuwan",
-//            email = "bhuwan123@gmail.com" ,
-//            password = "123"
-//        )
-//        val res = Userrepo.registerUser(user=data)
-//        val expected = true
-//        val actual = res.success
-//
-//        ServiceBuilder.token = res.token
-//        Assert.assertEquals(expected, actual)
-//
-//    }
+    @Test
+    fun testregister() = runBlocking {
+        Userrepo = UserRepository()
+
+        val data= UserEntity(
+            username = "Bhuwan",
+            emailUser = "bhuwan123@gmail.com" ,
+            passwordUser = "123"
+        )
+        val res = Userrepo.registerUser(user=data)
+        val expected = true
+        val actual = res.success
+
+        ServiceBuilder.token = res.token
+        Assert.assertEquals(expected, actual)
+
+    }
 }
