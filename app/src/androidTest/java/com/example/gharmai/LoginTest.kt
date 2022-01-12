@@ -26,14 +26,19 @@ class LoginTest {
     fun loginCheck() {
 
         onView(withId(R.id.emailLogin))
-            .perform(ViewActions.typeText("admin@gmail.com"))
+            .perform(ViewActions.typeText("nischal@gmail.com"))
         Thread.sleep(1000)
         Espresso.closeSoftKeyboard()
 
         onView(withId(R.id.passwordLogin))
+<<<<<<< HEAD
             .perform(ViewActions.typeText("password"))
 //        ViewActions.closeSoftKeyboard()
         ViewActions.closeSoftKeyboard()
+=======
+            .perform(ViewActions.typeText("nothing"))
+//        ViewActions.closeSoftKeyboard()
+>>>>>>> 8e4372325ab23eed9eb39384e0a1fa71711c53e6
         Thread.sleep(1000)
 
 

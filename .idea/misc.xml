@@ -23,8 +23,40 @@
         <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/drawable/ic_baseline_perm_contact_calendar_24.xml" value="0.24177631578947367" />
         <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/drawable/ic_location.xml" value="0.24177631578947367" />
         <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/drawable/ic_user.xml" value="0.24177631578947367" />
+<<<<<<< HEAD
         <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/activity_login.xml" value="0.23157894736842105" />
         <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/activity_user_register.xml" value="0.25" />
+=======
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/drawable/layout_bg.xml" value="0.24177631578947367" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/drawable/login_button_bk.xml" value="0.23289473684210527" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/drawable/login_shape_bk.xml" value="0.23289473684210527" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/abc.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/activity_dashboard.xml" value="0.17" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/activity_login.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/activity_login_choice.xml" value="0.22" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/activity_main.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/activity_salon_women.xml" value="0.25" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/activity_user_login.xml" value="0.2" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/activity_user_register.xml" value="0.25" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/bbb.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/cart_layout.xml" value="0.33" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/fragment_cart.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/layout_login.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/layout/layout_register.xml" value="0.22" />
+        <entry key="..\:/Users/bisha/Desktop/Agile Project/Gharmai/app/src/main/res/menu/bottom_navigation.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/neera/AndroidStudioProjects/Gharmai/app/src/main/res/drawable/ic_menu.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/neera/AndroidStudioProjects/Gharmai/app/src/main/res/layout/activity_admin_splashscreen.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/neera/AndroidStudioProjects/Gharmai/app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
+        <entry key="..\:/Users/neera/AndroidStudioProjects/Gharmai/app/src/main/res/layout/activity_user_login.xml" value="0.25" />
+        <entry key="..\:/Users/neera/AndroidStudioProjects/Gharmai/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
+        <entry key="..\:/Users/neera/AndroidStudioProjects/Gharmai/app/src/main/res/layout/activity_user_register.xml" value="0.25" />
+        <entry key="..\:/Users/neera/AndroidStudioProjects/Gharmai/app/src/main/res/layout/fragment_home.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/neera/AndroidStudioProjects/Gharmai/app/src/main/res/layout/fragment_profile.xml" value="0.14479166666666668" />
+        <entry key="..\:/Users/neera/AndroidStudioProjects/Gharmai/app/src/main/res/layout/services_adding_admin.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/neera/AndroidStudioProjects/Gharmai/app/src/main/res/menu/bottom_navigation.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/neera/AndroidStudioProjects/Gharmai/app/src/main/res/menu/profile_menu.xml" value="0.12708333333333333" />
+>>>>>>> 8e4372325ab23eed9eb39384e0a1fa71711c53e6
         <entry key="..\:/Users/raipr/AndroidStudioProjects/Gharmai/app/src/main/res/drawable/ic_menu.xml" value="0.23692307692307693" />
         <entry key="..\:/Users/raipr/AndroidStudioProjects/Gharmai/app/src/main/res/layout/activity_dashboard.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/raipr/AndroidStudioProjects/Gharmai/app/src/main/res/layout/activity_login.xml" value="0.15833333333333333" />

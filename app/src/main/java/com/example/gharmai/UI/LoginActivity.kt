@@ -92,7 +92,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             } catch (ex: Exception) {
                 withContext(Dispatchers.Main) {
-                    Log.d("Error", ex.toString())
+                    Log.d("grshgi", ex.toString())
 
                     Toast.makeText(
                         this@LoginActivity,
