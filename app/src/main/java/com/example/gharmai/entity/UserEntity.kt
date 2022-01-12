@@ -8,7 +8,7 @@ data class UserEntity(
     val phoneUser: String?= null,
     val emailUser: String?= null,
     val passwordUser: String?= null,
-    val genderUser: String?= null
-//    var profile_pic: String?=null
+    val genderUser: String?= null,
+    var profile_pic: String?=null
 ) {
 }

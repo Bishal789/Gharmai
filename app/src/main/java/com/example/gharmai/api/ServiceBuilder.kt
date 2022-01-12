@@ -9,7 +9,7 @@ object ServiceBuilder {
 
     //ip address for physical device
     //10.0.2.2 for emulator
-        private const val BASE_URL = "http://10.0.2.2:90/"
+    val BASE_URL = "http://10.0.2.2:90/"
 //        private const val BASE_URL = "http://192.168.0.119:90/"
     //    private const val BASE_URL = "http://192.168.137.68:90/"
 //    private const val BASE_URL = "http://localhost:90/"

@@ -48,5 +48,9 @@ class UserRepository : ApiRequest(){
         return apiRequest {
             userApi.deleteuser(ServiceBuilder.token!!, id)
         }
+    }suspend fun getUserDetails(id:String): UserResponse {
+        return apiRequest {
+            userApi.getAllUserAPI(ServiceBuilder.token!!, id)
+        }
     }
 }
