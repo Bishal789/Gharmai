@@ -41,74 +41,74 @@ class User_section_fragment : Fragment() {
         val view = inflater.inflate(R.layout.user_section_fragment, container, false)
 
         ADD_Service = view.findViewById(R.id.ADD_SERVICES)
-        recyclerView = view.findViewById(R.id.recyclerview)
+        recyclerView = view.findViewById(R.id.recyclerview12)
         btnDelete = view.findViewById(R.id.button_DELETE_ADMIN)
 
         ADD_Service.setOnClickListener {
             startActivity(Intent(activity, add_services::class.java))
         }
 
-        getUser()
+//        getUser()
 
         btnDelete.setOnClickListener {
-            delete()
+//            delete()
         }
         return view
     }
 
-    private fun getUser() {
-        lstUser = ArrayList<UserEntity>()
-        CoroutineScope(Dispatchers.Main).launch {
-            try {
-                val repository = UserRepository()
-                val response = repository.getUserDetails(ServiceBuilder.userId!!)
-                if (response.success == true) {
-                    response.data?.forEach { item ->
-                        lstUser.add(item)
-                    }
-                    withContext(Dispatchers.Main) {
-                        val adapter = context?.let { UserAdapter(lstUser, it) }
-                        recyclerView.layoutManager =
-                            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-                        recyclerView.adapter = adapter
-                    }
-                }
-            } catch (ex: Exception) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-    }
+//    private fun getUser() {
+//        lstUser = ArrayList<UserEntity>()
+//        CoroutineScope(Dispatchers.Main).launch {
+//            try {
+//                val repository = UserRepository()
+//                val response = repository.getUserDetails(ServiceBuilder.userId!!)
+//                if (response.success == true) {
+//                    response.data?.forEach { item ->
+//                        lstUser.add(item)
+//                    }
+//                    withContext(Dispatchers.Main) {
+//                        val adapter = context?.let { UserAdapter(lstUser, it) }
+//                        recyclerView.layoutManager =
+//                            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+//                        recyclerView.adapter = adapter
+//                    }
+//                }
+//            } catch (ex: Exception) {
+//                withContext(Dispatchers.Main) {
+//                    Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        }
+//    }
 
-    private fun delete() {
-        lstUser = ArrayList<UserEntity>()
-        val builder = android.app.AlertDialog.Builder(context)
-        builder.setTitle("Delete Profile")
-        builder.setMessage("Are you sure you want to delete your profile??")
-        builder.setIcon(android.R.drawable.ic_dialog_alert)
-        builder.setPositiveButton("Yes") { _, _ ->
-            CoroutineScope(Dispatchers.Main).launch {
-                try {
-                    val repository = UserRepository()
-                    val response = repository.deleteuser(ServiceBuilder.userId!!)
-                    if (response.success == true) {
-                        response.data?.forEach { item ->
-                            lstUser.remove(item)
-                        }
-                        withContext(Dispatchers.Main) {
-                            val adapter = context?.let { UserAdapter(lstUser, it) }
-                            recyclerView.layoutManager =
-                                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-                            recyclerView.adapter = adapter
-                        }
-                    }
-                } catch (ex: Exception) {
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
-        }
-    }
+//    private fun delete() {
+//        lstUser = ArrayList<UserEntity>()
+//        val builder = android.app.AlertDialog.Builder(context)
+//        builder.setTitle("Delete Profile")
+//        builder.setMessage("Are you sure you want to delete your profile??")
+//        builder.setIcon(android.R.drawable.ic_dialog_alert)
+//        builder.setPositiveButton("Yes") { _, _ ->
+//            CoroutineScope(Dispatchers.Main).launch {
+//                try {
+//                    val repository = UserRepository()
+//                    val response = repository.deleteuser(ServiceBuilder.userId!!)
+//                    if (response.success == true) {
+//                        response.data?.forEach { item ->
+//                            lstUser.remove(item)
+//                        }
+//                        withContext(Dispatchers.Main) {
+//                            val adapter = context?.let { UserAdapter(lstUser, it) }
+//                            recyclerView.layoutManager =
+//                                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+//                            recyclerView.adapter = adapter
+//                        }
+//                    }
+//                } catch (ex: Exception) {
+//                    withContext(Dispatchers.Main) {
+//                        Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            }
+//        }
+//    }
 }
