@@ -46,7 +46,7 @@ class UserAdapter (
         holder.tvUserGender.text = user.genderUser
 
         Glide.with(context)
-            .load(ServiceBuilder.BASE_URL+user.profile_pic)
+            .load(ServiceBuilder.BASE_URL+user.profile_picUser)
             .circleCrop()
             .into(holder.imgUserImage)
     }

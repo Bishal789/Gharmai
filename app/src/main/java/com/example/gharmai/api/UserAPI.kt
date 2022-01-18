@@ -51,6 +51,14 @@ interface UserAPI {
     ): Response<UserResponse>
 
 
+//    @Multipart
+//    @PUT("profile/update/{id}")
+//    suspend fun updateimage(
+//        @Header("Authorization") token: String,
+//        @Path("id") id: String,
+//        @Part file: MultipartBody.Part
+//    ): Response<UserResponse>
+
     @Multipart
     @PUT("profile/image/update/{id}")
     suspend fun updateimage(

@@ -79,11 +79,11 @@ class ProfileFragment : Fragment() {
                 editUsername.setText(response.data!!.username)
                 editPhone.setText(response.data!!.phoneUser)
 
-//                context?.let {
-//                    Glide.with(it)
-//                        .load(ServiceBuilder.BASE_URL + response.data.profile_pic)
-//                        .into(profileImage)
-//                }
+                context?.let {
+                    Glide.with(it)
+                        .load(ServiceBuilder.BASE_URL + response.data.profile_picUser)
+                        .into(profileImage)
+                }
             } else {
                 withContext(Dispatchers.Main) {
 

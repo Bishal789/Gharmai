@@ -11,7 +11,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gharmai.Adapter.UserAdapter
+//import com.example.gharmai.Adapter.UserAdapter
 import com.example.gharmai.AdminUI.add_services
 import com.example.gharmai.R
 import com.example.gharmai.api.ServiceBuilder

@@ -85,12 +85,7 @@ class User_editProfile : AppCompatActivity() {
                         eetEmail.setText(response.data?.emailUser)
                         eetAddress.setText(response.data?.addressUser)
                         eetPhone.setText(response.data?.phoneUser)
-//                        val imageUrl = ServiceBuilder.BASE_URL+response.data?.image
-//                        this.let {
-//                            Glide.with(Activity()).asBitmap().load(imageUrl).into(
-//                                BitmapImageViewTarget(ivImageview)
-//                            )
-//                        }
+
 
                     }
                 }
@@ -105,83 +100,7 @@ class User_editProfile : AppCompatActivity() {
 
 
     // --------------------------- Updating user profile --------------------------
-    private fun updateUser() {
-        val Username = eetUsername.text.toString()
-        val Email = eetEmail.text.toString()
-        val Address = eetAddress.text.toString()
-        val Phone = eetPhone.text.toString()
 
-        val data = UserEntity(
-            username = Username, emailUser = Email, addressUser = Address, phoneUser = Phone
-        )
-
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val userrepo = UserRepository()
-                val userres = userrepo.updateuser(ServiceBuilder.userId!!, data)
-
-                if (userres.success == true) {
-
-
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(this@User_editProfile, "User Updated", Toast.LENGTH_SHORT)
-                            .show()
-                    }
-//                    Updateimage(ServiceBuilder.userId!!)
-
-                    startActivity(Intent(this@User_editProfile, Dashboard::class.java))
-                }
-            } catch (ex: Exception) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(this@User_editProfile, ex.toString(), Toast.LENGTH_SHORT)
-                        .show()
-                }
-            }
-        }
-    }
-
-    private fun Updateimage(userId: String) {
-        val file = File(imageUrl)
-        Log.d("phoarwto", file.toString())
-        val mimeType = getMimeType(file)
-        val reqFile = RequestBody.create(MediaType.parse(mimeType), file)
-        val body = MultipartBody.Part.createFormData("file", file.name, reqFile)
-
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val userrepo = UserRepository()
-                Log.d("Userrerpo", userrepo.toString())
-                val response = userrepo.updateimage(userId, body)
-                if (response.success == true) {
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(
-                            this@User_editProfile,
-                            "Update successful",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                }
-            } catch (ex: Exception) {
-                withContext(Dispatchers.Main) {
-                    Log.d("Mero Error ", ex.localizedMessage)
-                    Toast.makeText(
-                        this@User_editProfile,
-                        ex.localizedMessage,
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-        }
-    }
-
-    fun getMimeType(file: File): String? {
-        var type: String? = null
-        val extension = MimeTypeMap.getFileExtensionFromUrl(file.path)
-        if (extension != null) {
-            type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension)
-        }
-        return type
-    }
 
     // -------------- end of updating user update -----------------------
 
@@ -298,5 +217,86 @@ class User_editProfile : AppCompatActivity() {
             e.printStackTrace()
             file
         }
+    }
+
+
+    private fun updateUser() {
+        val Username = eetUsername.text.toString()
+        val Email = eetEmail.text.toString()
+        val Address = eetAddress.text.toString()
+        val Phone = eetPhone.text.toString()
+
+        val data = UserEntity(
+            username = Username, emailUser = Email, addressUser = Address, phoneUser = Phone
+        )
+
+        Log.d("dataaaaa",data.toString())
+
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val userrepo = UserRepository()
+                val userres = userrepo.updateuser(ServiceBuilder.userId!!, data)
+
+                if (userres.success == true) {
+
+
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@User_editProfile, "User Updated", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                    Updateimage(ServiceBuilder.userId!!)
+
+                    startActivity(Intent(this@User_editProfile, Dashboard::class.java))
+                }
+            } catch (ex: Exception) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@User_editProfile, ex.toString(), Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+        }
+    }
+
+    private fun Updateimage(userId: String) {
+        val file = File(imageUrl)
+        Log.d("phoarwto", file.toString())
+        val mimeType = getMimeType(file)
+        val reqFile = RequestBody.create(MediaType.parse(mimeType), file)
+        val body = MultipartBody.Part.createFormData("file", file.name, reqFile)
+
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val userrepo = UserRepository()
+                Log.d("Userrerpo", userrepo.toString())
+                val response = userrepo.updateimage(userId, body)
+                if (response.success == true) {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(
+                            this@User_editProfile,
+                            "Update successful",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+            } catch (ex: Exception) {
+                withContext(Dispatchers.Main) {
+                    Log.d("Mero Error ", ex.localizedMessage)
+                    Toast.makeText(
+                        this@User_editProfile,
+                        ex.localizedMessage,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+    }
+
+    fun getMimeType(file: File): String? {
+        var type: String? = null
+        val extension = MimeTypeMap.getFileExtensionFromUrl(file.path)
+        if (extension != null) {
+            type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension)
+        }
+        return type
     }
 }
