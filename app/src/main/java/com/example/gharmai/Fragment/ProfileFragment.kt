@@ -131,8 +131,7 @@ class ProfileFragment : Fragment() {
                                     if (response.success == true) {
 
 
-                                        startActivity(Intent(context, LoginActivity::class.java))
-                                        requireActivity().finish()
+
                                         withContext(Dispatchers.Main) {
                                             Toast.makeText(
                                                 context,
@@ -140,7 +139,10 @@ class ProfileFragment : Fragment() {
                                                 Toast.LENGTH_SHORT
                                             )
                                                 .show()
+
                                         }
+                                        startActivity(Intent(context, LoginActivity::class.java))
+                                        requireActivity().finish()
                                     }
                                 } catch (ex: Exception) {
                                     withContext(Dispatchers.Main) {

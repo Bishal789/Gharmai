@@ -129,8 +129,7 @@ class User_editProfile : AppCompatActivity() {
                     }
 //                    Updateimage(ServiceBuilder.userId!!)
 
-                    val Intent = Intent(this@User_editProfile, Dashboard::class.java)
-                    startActivity(Intent)
+                    startActivity(Intent(this@User_editProfile, Dashboard::class.java))
                 }
             } catch (ex: Exception) {
                 withContext(Dispatchers.Main) {

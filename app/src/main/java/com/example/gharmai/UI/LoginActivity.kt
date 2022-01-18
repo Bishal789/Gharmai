@@ -55,50 +55,51 @@ class LoginActivity : AppCompatActivity() {
 
         if (email == "admin" && password =="admin"){
             startActivity(Intent(this@LoginActivity,admin_splashscreen::class.java))
-        }
+        }else {
 
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val repository = UserRepository()
-                val response = repository.login(email, password)
-                if (response.success == true) {
-                    // Save token
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    val repository = UserRepository()
+                    val response = repository.login(email, password)
+                    if (response.success == true) {
+                        // Save token
 
-                    ServiceBuilder.token = "Bearer ${response.token}"
-                    ServiceBuilder.userId = response.userId
-                    //Save username and password in shared preferences
-                    // saveUsernamePassword()
+                        ServiceBuilder.token = "Bearer ${response.token}"
+                        ServiceBuilder.userId = response.userId
+                        //Save username and password in shared preferences
+                        // saveUsernamePassword()
 
-                    startActivity(
-                        Intent(
-                            this@LoginActivity, Dashboard::class.java
-                        )
-                    )
-//                    Toast.makeText(this@LoginActivity, "Login Success" , Toast.LENGTH_SHORT).show()
-                    finish()
-                } else {
-                    withContext(Dispatchers.Main) {
-                        val snack =
-                            Snackbar.make(
-                                linearLayout,
-                                "Invalid credentials",
-                                Snackbar.LENGTH_LONG
+                        startActivity(
+                            Intent(
+                                this@LoginActivity, Dashboard::class.java
                             )
-                        snack.setAction("OK", View.OnClickListener {
-                            snack.dismiss()
-                        })
-                        snack.show()
+                        )
+//                    Toast.makeText(this@LoginActivity, "Login Success" , Toast.LENGTH_SHORT).show()
+                        finish()
+                    } else {
+                        withContext(Dispatchers.Main) {
+                            val snack =
+                                Snackbar.make(
+                                    linearLayout,
+                                    "Invalid credentials",
+                                    Snackbar.LENGTH_LONG
+                                )
+                            snack.setAction("OK", View.OnClickListener {
+                                snack.dismiss()
+                            })
+                            snack.show()
+                        }
                     }
-                }
-            } catch (ex: Exception) {
-                withContext(Dispatchers.Main) {
-                    Log.d("grshgi", ex.toString())
+                } catch (ex: Exception) {
+                    withContext(Dispatchers.Main) {
+                        Log.d("grshgi", ex.toString())
 
-                    Toast.makeText(
-                        this@LoginActivity,
-                        ex.toString(),
-                        Toast.LENGTH_SHORT
-                    ).show()
+                        Toast.makeText(
+                            this@LoginActivity,
+                            ex.toString(),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
             }
         }
