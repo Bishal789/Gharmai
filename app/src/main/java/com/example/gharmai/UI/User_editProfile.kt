@@ -17,6 +17,7 @@ import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.example.gharmai.Fragment.ProfileFragment
 import com.example.gharmai.R
 import com.example.gharmai.api.ServiceBuilder
@@ -85,8 +86,14 @@ class User_editProfile : AppCompatActivity() {
                         eetAddress.setText(response.data?.addressUser)
                         eetPhone.setText(response.data?.phoneUser)
 
+                        val imageUrl = ServiceBuilder.BASE_URL + response.data?.profile_picUser
+                        this.let {
+                            Glide.with(this@User_editProfile)
+                                .asBitmap()
+                                .load(imageUrl)
+                                .into(cameraPopup)
 
-
+                        }
 
 
                     }
