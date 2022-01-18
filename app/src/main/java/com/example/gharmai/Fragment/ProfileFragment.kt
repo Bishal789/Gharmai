@@ -53,6 +53,7 @@ class ProfileFragment : Fragment() {
 
         logout.setOnClickListener {
             startActivity(Intent(activity,LoginActivity::class.java))
+            requireActivity().finish()
         }
 //
         menuImg.setOnClickListener {

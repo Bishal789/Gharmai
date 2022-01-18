@@ -56,6 +56,11 @@ class UserRegister : AppCompatActivity() {
             }
         signUpUser.setOnClickListener {
             userRegister()
+            userAddress.setText("")
+            username.setText("")
+            userPassword.setText("")
+            userPhone.setText("")
+            userEmail.setText("")
         }
     }
     private fun userRegister(){

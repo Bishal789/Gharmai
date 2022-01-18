@@ -44,18 +44,21 @@ class LoginActivity : AppCompatActivity() {
         }
         loginButton.setOnClickListener {
             login()
+            emailLogin.setText("")
+            passwordLogin.setText("")
         }
 
 //        loginLinear.setAlpha(0.5f)
     }
-    private fun login(){
+
+    private fun login() {
 
         val email = emailLogin.text.toString()
         val password = passwordLogin.text.toString()
 
-        if (email == "admin" && password =="admin"){
-            startActivity(Intent(this@LoginActivity,admin_splashscreen::class.java))
-        }else {
+        if (email == "admin" && password == "admin") {
+            startActivity(Intent(this@LoginActivity, admin_splashscreen::class.java))
+        } else {
 
             CoroutineScope(Dispatchers.IO).launch {
                 try {
