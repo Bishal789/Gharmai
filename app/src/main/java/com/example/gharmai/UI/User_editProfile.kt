@@ -16,6 +16,7 @@ import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import com.bumptech.glide.Glide
 import com.example.gharmai.Fragment.ProfileFragment
 import com.example.gharmai.R
 import com.example.gharmai.api.ServiceBuilder
@@ -39,7 +40,6 @@ class User_editProfile : AppCompatActivity() {
 
     private lateinit var btnUpdate: ImageView
     private lateinit var cameraPopup: ImageView
-    private lateinit var upImage: ImageView
     private lateinit var eetUsername: EditText
     private lateinit var eetAddress: EditText
     private lateinit var eetPhone: EditText
@@ -56,7 +56,6 @@ class User_editProfile : AppCompatActivity() {
 
         btnUpdate = findViewById(R.id.btnUpdate)
         cameraPopup = findViewById(R.id.upImage)
-        upImage = findViewById(R.id.upImage)
         eetUsername = findViewById(R.id.eetUsername)
         eetAddress = findViewById(R.id.eetAddress)
         eetPhone = findViewById(R.id.eetPhone)
@@ -73,12 +72,12 @@ class User_editProfile : AppCompatActivity() {
         }
         CoroutineScope(Dispatchers.IO).launch {
 
-            try{
+            try {
                 val repository = UserRepository()
                 val response = repository.getCurrentUserAPI(ServiceBuilder.userId!!)
 
 
-                if(response.success==true){
+                if (response.success == true) {
 
                     withContext(Dispatchers.Main) {
                         eetUsername.setText(response.data?.username)
@@ -87,10 +86,13 @@ class User_editProfile : AppCompatActivity() {
                         eetPhone.setText(response.data?.phoneUser)
 
 
+
+
+
                     }
                 }
-            }catch(ex : Exception){
-                withContext(Dispatchers.Main){
+            } catch (ex: Exception) {
+                withContext(Dispatchers.Main) {
                     Log.d("error", ex.printStackTrace().toString())
                     Toast.makeText(this@User_editProfile, ex.toString(), Toast.LENGTH_SHORT).show()
                 }
@@ -230,7 +232,7 @@ class User_editProfile : AppCompatActivity() {
             username = Username, emailUser = Email, addressUser = Address, phoneUser = Phone
         )
 
-        Log.d("dataaaaa",data.toString())
+        Log.d("dataaaaa", data.toString())
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
