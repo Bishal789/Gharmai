@@ -108,6 +108,7 @@
                     android:textColor="@color/black" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/service_RecycleView"
                     android:layout_width="match_parent"
                     android:layout_height="368dp"
                     android:layout_alignParentTop="true"
@@ -115,8 +116,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="50dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="-72dp"
-                    tools:listitem="@layout/services_adding_admin" />
+                    android:layout_marginBottom="-72dp" />
 
 
             </RelativeLayout>

@@ -10,14 +10,15 @@ object ServiceBuilder {
     //ip address for physical device
     //10.0.2.2 for emulator
 
-    val BASE_URL = "http://10.1.1.29:90/"
+    //    val BASE_URL = "http://10.1.1.29:90/"
+    const val BASE_URL = "http://10.0.2.2:90/"
 
-//        private const val BASE_URL = "http://172.25.0.86:90/"
+    //        private const val BASE_URL = "http://172.25.0.86:90/"
 //        private const val BASE_URL = "http://192.168.0.119:90/"
     //    private const val BASE_URL = "http://192.168.137.68:90/"
 //    private const val BASE_URL = "http://localhost:90/"
-    var token: String? =null
-    var userId: String?= null
+    var token: String? = null
+    var userId: String? = null
 
     var okHttpClient = OkHttpClient.Builder()
         .connectTimeout(1, TimeUnit.MINUTES)
@@ -33,7 +34,7 @@ object ServiceBuilder {
         .build()
 
     //generic function
-    fun <A> buildService(serviceType: Class<A>):A{
+    fun <A> buildService(serviceType: Class<A>): A {
         return retrofitBuilder.create(serviceType)
     }
 }

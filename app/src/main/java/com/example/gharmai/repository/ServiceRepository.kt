@@ -17,4 +17,10 @@ class ServiceRepository: ApiRequest() {
             serviceAPI.registerService(service)
         }
     }
+
+    suspend fun getAllServiceAPI(): ServiceResponse {
+        return apiRequest {
+            serviceAPI.getAllServiceAPI(ServiceBuilder.token!!)
+        }
+    }
 }

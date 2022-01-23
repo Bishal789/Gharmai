@@ -22,6 +22,7 @@ class UserRegister : AppCompatActivity() {
     private lateinit var userEmail: EditText
     private lateinit var userAddress: EditText
     private lateinit var userPhone: EditText
+    private lateinit var confirmPassword: EditText
 
     val genderType = arrayOf("Male","Female","Other")
     var gender : String = ""
@@ -35,6 +36,7 @@ class UserRegister : AppCompatActivity() {
         signUpUser = findViewById(R.id.userSignUp)
         username = findViewById(R.id.username)
         userPassword = findViewById(R.id.userPassword)
+        confirmPassword = findViewById(R.id.confirmPassword)
         userEmail = findViewById(R.id.userEmail)
         userPhone = findViewById(R.id.userPhone)
 
@@ -59,6 +61,7 @@ class UserRegister : AppCompatActivity() {
             userAddress.setText("")
             username.setText("")
             userPassword.setText("")
+            confirmPassword.setText("")
             userPhone.setText("")
             userEmail.setText("")
         }
@@ -77,7 +80,8 @@ class UserRegister : AppCompatActivity() {
                 phoneUser = contact,
                 emailUser = email,
                 passwordUser = password,
-                genderUser = gender)
+                genderUser = gender
+            )
 
             CoroutineScope(Dispatchers.IO).launch {
                 //StudentDB(this@UserRegister).getUserDAO().registerUser(user)

@@ -4,6 +4,8 @@ import com.example.gharmai.entity.ServiceEntity
 import com.example.gharmai.response.ServiceResponse
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ServiceAPI {
@@ -15,5 +17,10 @@ interface ServiceAPI {
     suspend fun registerService(
         //send user objects of type User class
         @Body user: ServiceEntity
+    ): Response<ServiceResponse>
+
+    @GET("service/showall")
+    suspend fun getAllServiceAPI(
+        @Header("Authorization")token: String
     ): Response<ServiceResponse>
 }

@@ -11,9 +11,7 @@ interface UserAPI {
     //user API
     //routes
     @POST("user/register")
-    //suspend function to work with coroutines
     suspend fun registerUser(
-        //send user objects of type User class
         @Body user: UserEntity
     ): Response<UserResponse>
 
