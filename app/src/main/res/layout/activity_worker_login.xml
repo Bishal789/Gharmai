@@ -5,8 +5,8 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".UI.LoginActivity">
+    android:background="@drawable/bg"
+    tools:context=".UI.worker_login">
 
 
     <!--    <ImageView-->
@@ -97,90 +97,89 @@
 
 
 
-            <LinearLayout
-                android:id="@+id/linearLayout5"
-                android:layout_width="match_parent"
-                android:layout_height="267dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:background="#FDF5FF"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toTopOf="@+id/or"
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="267dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/or"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.437">
+
+            <EditText
+                android:id="@+id/emailLogin_worker"
+                android:layout_width="363dp"
+                android:layout_height="57dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_input"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawablePadding="10dp"
+                android:elevation="0sp"
+
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <EditText
+                android:id="@+id/passwordLogin_worker"
+                android:layout_width="363dp"
+                android:layout_height="57dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/custom_input"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Pasword"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <Button
+                android:id="@+id/worker_login"
+                style="@style/loginButton"
+                android:layout_width="208dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="99dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="104dp"
+                android:backgroundTint="#2ecc71"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dnthave_worker"
+                android:layout_width="253dp"
+                android:layout_height="23dp"
+
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="79dp"
+                android:gravity="center"
+                android:text="Don't Have A account? Sign In"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2"
-                app:layout_constraintVertical_bias="0.437">
-
-                <EditText
-                    android:id="@+id/emailLogin"
-                    android:layout_width="363dp"
-                    android:layout_height="57dp"
-                    android:layout_marginLeft="22dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/custom_input"
-                    android:drawableLeft="@drawable/ic_email"
-                    android:drawablePadding="10dp"
-                    android:elevation="0sp"
-
-                    android:ems="10"
-                    android:hint="Email"
-                    android:inputType="textPersonName"
-                    android:paddingLeft="10dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
-
-                <EditText
-                    android:id="@+id/passwordLogin"
-                    android:layout_width="363dp"
-                    android:layout_height="57dp"
-                    android:layout_marginLeft="22dp"
-                    android:layout_marginTop="22dp"
-                    android:background="@drawable/custom_input"
-                    android:drawableLeft="@drawable/ic_password"
-                    android:drawablePadding="10dp"
-                    android:ems="10"
-                    android:hint="Pasword"
-                    android:inputType="textPersonName"
-                    android:paddingLeft="10dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
-
-                <Button
-                    android:id="@+id/button2"
-                    style="@style/loginButton"
-                    android:layout_width="208dp"
-                    android:layout_height="53dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="99dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="104dp"
-                    android:backgroundTint="#2ecc71"
-                    android:text="Login"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/dnthave"
-                    android:layout_width="253dp"
-                    android:layout_height="23dp"
-
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginEnd="79dp"
-                    android:gravity="center"
-                    android:text="Don't Have A account? Sign In"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints" />
 
 
-            </LinearLayout>
+        </LinearLayout>
 
 
             <RelativeLayout
