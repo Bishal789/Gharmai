@@ -1,4 +1,4 @@
-package com.example.gharmai.UI
+package com.example.gharmai.worker_UI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,8 +11,8 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.gharmai.AdminUI.admin_splashscreen
 import com.example.gharmai.R
+import com.example.gharmai.UI.Dashboard
 import com.example.gharmai.api.ServiceBuilder
-import com.example.gharmai.repository.UserRepository
 import com.example.gharmai.repository.WorkerRepository
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
@@ -44,7 +44,7 @@ class worker_login : AppCompatActivity() {
         }
 
         register.setOnClickListener {
-            startActivity(Intent(this@worker_login,worker_register::class.java))
+            startActivity(Intent(this@worker_login, worker_register::class.java))
         }
     }
 
@@ -71,7 +71,7 @@ class worker_login : AppCompatActivity() {
 
                         startActivity(
                             Intent(
-                                this@worker_login, Dashboard::class.java
+                                this@worker_login, worker_dashboard::class.java
                             )
                         )
 //                    Toast.makeText(this@LoginActivity, "Login Success" , Toast.LENGTH_SHORT).show()

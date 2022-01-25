@@ -1,4 +1,4 @@
-package com.example.gharmai.UI
+package com.example.gharmai.worker_UI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

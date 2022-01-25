@@ -28,21 +28,23 @@
         android:theme="@style/Theme.Gharmai"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".UI.worker_login"
+            android:name=".worker_UI.Update_workerProfile"
+            android:exported="true" />
+        <activity
+            android:name=".worker_UI.worker_dashboard"
+            android:exported="true" />
+        <activity
+            android:name=".worker_UI.worker_login"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name=".UI.worker_register"
-            android:exported="true">
-
-        </activity>
+            android:name=".worker_UI.worker_register"
+            android:exported="true" />
         <activity
             android:name=".AdminUI.add_services"
             android:exported="true" />
@@ -72,7 +74,7 @@
             android:exported="true" />
         <activity
             android:name=".UI.SplashScreen"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
