@@ -32,15 +32,19 @@
             android:exported="true" />
         <activity
             android:name=".worker_UI.worker_dashboard"
-            android:exported="true" />
-        <activity
-            android:name=".worker_UI.worker_login"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".worker_UI.worker_login"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".worker_UI.worker_register"
@@ -77,4 +81,10 @@
             android:exported="true" />
     </application>
 
+
+
 </manifest>
+
+
+
+
