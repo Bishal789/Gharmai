@@ -1,21 +1,17 @@
 package com.example.gharmai.worker_UI
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.webkit.WebView
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.Switch
 import android.widget.TextView
-import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import com.example.gharmai.Fragment.CartFragment
-import com.example.gharmai.Fragment.HomeFragment
-import com.example.gharmai.Fragment.ProfileFragment
 import com.example.gharmai.R
 import com.example.gharmai.worker_UI.worker_fragment.Map_Fragment
-import com.example.gharmai.worker_UI.worker_fragment.Profile_fragment_worker
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class worker_dashboard : AppCompatActivity() {
 
@@ -23,9 +19,10 @@ class worker_dashboard : AppCompatActivity() {
     private lateinit var tvStatus: TextView
     private lateinit var switch: Switch
     private lateinit var info: TextView
+    private lateinit var profile_img:ImageView
 
     private val HomeFragment = Map_Fragment()
-    private val ProfileFragment = Profile_fragment_worker()
+//    private val ProfileFragment = Profile_fragment_worker()
 
     private lateinit var container: RelativeLayout
 
@@ -39,20 +36,27 @@ class worker_dashboard : AppCompatActivity() {
         switch = findViewById(R.id.status)
         container = findViewById(R.id.worker_fragment_Container)
         info = findViewById(R.id.info)
+        profile_img = findViewById(R.id.profile_img)
 
 
         container.visibility = View.GONE
 
 
         replacefragment(HomeFragment)
-        val bottomNav = findViewById<BottomNavigationView>(R.id.botNav)
-        bottomNav.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.home_worker -> replacefragment(HomeFragment)
-                R.id.profile_worker -> replacefragment(ProfileFragment)
-            }
-            true
+
+
+        profile_img.setOnClickListener{
+            startActivity(Intent(this@worker_dashboard,worker_profileSection::class.java))
         }
+
+//        val bottomNav = findViewById<BottomNavigationView>(R.id.botNav)
+//        bottomNav.setOnNavigationItemSelectedListener {
+//            when (it.itemId) {
+//                R.id.home_worker -> replacefragment(HomeFragment)
+//                R.id.profile_worker -> replacefragment(ProfileFragment)
+//            }
+//            true
+//        }
 
 
 
