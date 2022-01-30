@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.Switch
 import android.widget.TextView
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.example.gharmai.R
 import com.example.gharmai.worker_UI.worker_fragment.Map_Fragment
@@ -46,7 +45,7 @@ class worker_dashboard : AppCompatActivity() {
 
 
         profile_img.setOnClickListener{
-            startActivity(Intent(this@worker_dashboard,worker_profileSection::class.java))
+            startActivity(Intent(this@worker_dashboard, Update_workerProfile::class.java))
         }
 
 //        val bottomNav = findViewById<BottomNavigationView>(R.id.botNav)

@@ -1,6 +1,8 @@
 package com.example.gharmai.api
 
+import com.example.gharmai.entity.UserEntity
 import com.example.gharmai.entity.WorkerEntity
+import com.example.gharmai.response.UserResponse
 import com.example.gharmai.response.WorkerResponse
 import retrofit2.Response
 import retrofit2.http.*
@@ -24,11 +26,11 @@ interface WorkerAPI {
         @Field("workerPassword") password: String
     ): Response<WorkerResponse>
 
-//    @GET("profile/single/{id}")
-//    suspend fun getAllUserAPI(
-//        @Header("Authorization")token: String,
-//        @Path("id")  id: String
-//    ): Response<UserResponse>
+    @GET("worker/profile/show/{id}")
+    suspend fun getWorkerProfile(
+        @Header("Authorization")token: String,
+        @Path("id")  id: String
+    ): Response<WorkerResponse>
 //
 //    @FormUrlEncoded
 //    @PUT("user/update/{id}")
@@ -40,12 +42,13 @@ interface WorkerAPI {
 //        @Field("address") address:String,
 //        @Field("phone") phone:String,
 //    ): Response<UserResponse>
-//    @PUT("profile/update/{id}")
-//    suspend fun updateuser(
-//        @Header("Authorization") token: String,
-//        @Path("id") id: String,
-//        @Body data : UserEntity
-//    ): Response<UserResponse>
+
+    @PUT("worker/profile/update/{id}")
+    suspend fun updateWorker(
+        @Header("Authorization") token: String,
+        @Path("id") id: String,
+        @Body data : WorkerEntity
+    ): Response<WorkerResponse>
 //
 //
 ////    @Multipart

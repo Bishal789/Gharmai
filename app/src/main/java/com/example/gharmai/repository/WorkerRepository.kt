@@ -27,21 +27,21 @@ class WorkerRepository : ApiRequest(){
             workerApi.loginWorker(email, password)
         }
     }
-//    suspend fun getCurrentUserAPI(id: String): UserResponse {
-//        return apiRequest {
-//            userApi.getAllUserAPI(ServiceBuilder.token!!, id)
-//        }
-//    }
-//    suspend fun editUser(id: String,username: String, email: String,address: String,phone:String): UserResponse {
+    suspend fun getCurrentWorker(id: String): WorkerResponse {
+        return apiRequest {
+            workerApi.getWorkerProfile(ServiceBuilder.token!!, id)
+        }
+    }
+    //    suspend fun editUser(id: String,username: String, email: String,address: String,phone:String): UserResponse {
 //        return apiRequest {
 //            userApi.editUser(ServiceBuilder.token!!,id, username,  email,address,phone,)
 //        }
 //    }
-//    suspend fun updateuser(id:String, data: UserEntity): UserResponse {
-//        return apiRequest {
-//            userApi.updateuser(ServiceBuilder.token!!, id, data)
-//        }
-//    }
+    suspend fun updateWorker(id:String, data: WorkerEntity): WorkerResponse {
+        return apiRequest {
+            workerApi.updateWorker(ServiceBuilder.token!!, id, data)
+        }
+    }
 //    suspend fun updateimage(id:String,body: MultipartBody.Part): UserResponse {
 //        return apiRequest {
 //            userApi.updateimage(ServiceBuilder.token!!, id, body)
