@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.gharmai.AdminUI.admin_splashscreen
 import com.example.gharmai.R
 import com.example.gharmai.UI.Dashboard
 import com.example.gharmai.api.ServiceBuilder
@@ -52,10 +51,7 @@ class worker_login : AppCompatActivity() {
         val email = workerLoginEmail.text.toString()
         val password = workerLoginPassword.text.toString()
 
-        if (email == "admin" && password == "admin") {
-            startActivity(Intent(this@worker_login, admin_splashscreen::class.java))
-        }
-        else{
+
 
             CoroutineScope(Dispatchers.IO).launch {
                 try {
@@ -103,5 +99,4 @@ class worker_login : AppCompatActivity() {
                 }
             }
         }
-    }
 }

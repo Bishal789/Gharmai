@@ -48,18 +48,7 @@ class worker_dashboard : AppCompatActivity() {
             startActivity(Intent(this@worker_dashboard, Update_workerProfile::class.java))
         }
 
-//        val bottomNav = findViewById<BottomNavigationView>(R.id.botNav)
-//        bottomNav.setOnNavigationItemSelectedListener {
-//            when (it.itemId) {
-//                R.id.home_worker -> replacefragment(HomeFragment)
-//                R.id.profile_worker -> replacefragment(ProfileFragment)
-//            }
-//            true
-//        }
 
-
-
-        //        val text = "Nothing Check"
         switch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked){
                 // when switch button is checked
