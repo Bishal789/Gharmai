@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/constraint"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="worker_UI.worker_fragment.Profile_fragment_worker">
+    tools:context="worker_UI.worker_profileSection">
 
 
     <LinearLayout

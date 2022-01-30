@@ -36,11 +36,7 @@
         <activity
             android:name=".worker_UI.worker_dashboard"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".worker_UI.worker_login"
@@ -62,7 +58,15 @@
             android:exported="true" />
         <activity
             android:name=".UI.Dashboard"
-            android:exported="true" />
+            android:exported="true">
+
+
+
+
+
+        </activity>
+
+
         <activity
             android:name=".UI.User_editProfile"
             android:exported="true" />
@@ -77,7 +81,18 @@
             android:exported="true" />
         <activity
             android:name=".UI.SplashScreen"
-            android:exported="true" />
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+
+
+        </activity>
     </application>
 
 </manifest>
