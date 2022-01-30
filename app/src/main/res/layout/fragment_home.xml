@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fcfcfc"
-    android:id="@+id/fragmentHome"
     tools:context=".Fragment.HomeFragment">
 
 
@@ -86,12 +85,12 @@
                             android:textStyle="bold" />
 
 
-
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/salonMen"
                     android:layout_width="120dp"
                     android:layout_height="127dp"
                     android:layout_marginRight="5dp"
@@ -126,9 +125,9 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/plumber"
                     android:layout_width="120dp"
                     android:layout_height="127dp"
-
                     android:clickable="true"
                     android:foreground="?android:attr/selectableItemBackground">
 
@@ -166,6 +165,7 @@
 
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/electricians"
                     android:layout_width="120dp"
                     android:layout_height="127dp"
                     android:layout_marginRight="5dp"
@@ -198,6 +198,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cleaningAndDisinfection"
                     android:layout_width="120dp"
                     android:layout_height="127dp"
                     android:layout_marginRight="5dp"
@@ -231,6 +232,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/carpenter"
                     android:layout_width="120dp"
                     android:layout_height="127dp"
                     android:clickable="true"
@@ -270,6 +272,7 @@
                 android:gravity="center">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/menTherapy"
                     android:layout_width="120dp"
                     android:layout_height="127dp"
                     android:layout_margin="10dp"
@@ -303,6 +306,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/womenTherapy"
                     android:layout_width="120dp"
                     android:layout_height="127dp"
                     android:layout_margin="10dp"
