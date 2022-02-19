@@ -71,4 +71,10 @@ interface UserAPI {
         @Path("id") id: String,
 
         ):Response<UserResponse>
+
+//    @POST("service/subscribe/{id}")
+//    suspend fun bookService(
+//        @Header("Authorization") token: String,
+//        @Path("id")id: String
+//     ):Response<UserResponse>
 }

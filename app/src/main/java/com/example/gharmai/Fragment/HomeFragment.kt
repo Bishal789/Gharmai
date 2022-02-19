@@ -16,14 +16,14 @@ import com.example.gharmai.R
 
 class HomeFragment : Fragment() {
 
-    private lateinit var salonWomen: CardView
-    private lateinit var salonMen: CardView
-    private lateinit var plumber: CardView
-    private lateinit var electricians: CardView
-    private lateinit var cleaningAndDisinfection: CardView
-    private lateinit var menTherapy: CardView
-    private lateinit var womenTherapy: CardView
-    private lateinit var carpenter: CardView
+    private lateinit var salonWomenFrag: CardView
+    private lateinit var salonMenFrag: CardView
+    private lateinit var plumberFrag: CardView
+    private lateinit var electriciansFrag: CardView
+    private lateinit var cleaningAndDisinfectionFrag: CardView
+    private lateinit var menTherapyFrag: CardView
+    private lateinit var womenTherapyFrag: CardView
+    private lateinit var carpenterFrag: CardView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,44 +32,44 @@ class HomeFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        salonWomen = view.findViewById(R.id.salonWomen)
-        salonMen = view.findViewById(R.id.salonMen)
-        plumber = view.findViewById(R.id.plumber)
-        electricians = view.findViewById(R.id.electricians)
-        cleaningAndDisinfection = view.findViewById(R.id.cleaningAndDisinfection)
-        carpenter = view.findViewById(R.id.carpenter)
-        menTherapy = view.findViewById(R.id.menTherapy)
-        womenTherapy = view.findViewById(R.id.womenTherapy)
+        salonWomenFrag = view.findViewById(R.id.salonWomen)
+        salonMenFrag = view.findViewById(R.id.salonMen)
+        plumberFrag = view.findViewById(R.id.plumber)
+        electriciansFrag = view.findViewById(R.id.electricians)
+        cleaningAndDisinfectionFrag = view.findViewById(R.id.cleaningAndDisinfection)
+        carpenterFrag = view.findViewById(R.id.carpenter)
+        menTherapyFrag = view.findViewById(R.id.menTherapy)
+        womenTherapyFrag = view.findViewById(R.id.womenTherapy)
 
-        salonWomen.setOnClickListener {
+        salonWomenFrag.setOnClickListener {
             startActivity(Intent(activity, salon_women::class.java))
         }
 
-        salonMen.setOnClickListener {
+        salonMenFrag.setOnClickListener {
             startActivity(Intent(activity, salon_men::class.java))
         }
 
-        plumber.setOnClickListener {
-            startActivity(Intent(activity, com.example.gharmai.InsideUI.plumber::class.java))
+        plumberFrag.setOnClickListener {
+            startActivity(Intent(activity, plumber::class.java))
         }
 
-        electricians.setOnClickListener {
-            startActivity(Intent(activity, com.example.gharmai.InsideUI.electricians::class.java))
+        electriciansFrag.setOnClickListener {
+            startActivity(Intent(activity, electricians::class.java))
         }
 
-        cleaningAndDisinfection.setOnClickListener {
+        cleaningAndDisinfectionFrag.setOnClickListener {
             startActivity(Intent(activity, cleaning_disinfection::class.java))
         }
 
-        carpenter.setOnClickListener {
-            startActivity(Intent(activity, com.example.gharmai.InsideUI.carpenter::class.java))
+        carpenterFrag.setOnClickListener {
+            startActivity(Intent(activity, carpenter::class.java))
         }
 
-        menTherapy.setOnClickListener {
+        menTherapyFrag.setOnClickListener {
             startActivity(Intent(activity, men_therapy::class.java))
         }
 
-        womenTherapy.setOnClickListener {
+        womenTherapyFrag.setOnClickListener {
             startActivity(Intent(activity, women_therapy::class.java))
         }
 

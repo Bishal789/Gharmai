@@ -9,7 +9,7 @@
 
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/serviceImage"
+        android:id="@+id/bookedServiceImage"
         android:layout_width="126dp"
         android:layout_height="130dp"
         android:layout_alignParentTop="true"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/noimage" />
 
     <TextView
-        android:id="@+id/serviceName"
+        android:id="@+id/bookedServiceName"
         android:layout_width="102dp"
         android:layout_height="38dp"
         android:layout_alignParentTop="true"
@@ -33,7 +33,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/servicedesciption"
+        android:id="@+id/bookedServiceDescription"
         android:layout_width="251dp"
         android:layout_height="43dp"
         android:layout_alignParentTop="true"
@@ -45,17 +45,28 @@
         android:textSize="10dp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btncheckout"
+    <TextView
+        android:id="@+id/bookedServicePrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="107dp"
-        android:layout_marginEnd="17dp"
-        android:text="Checkout" />
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="6dp"
+        android:gravity="right"
+        android:text="Total: 150"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
-
+    <Button
+        android:id="@+id/buttonDeleteService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="16dp"
+        android:text="Cancel " />
 
     <CheckBox
         android:id="@+id/checkBox2"

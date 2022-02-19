@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.gharmai.R
+import com.example.gharmai.worker_UI.worker_login
 
 class LoginChoice : AppCompatActivity() {
 
@@ -20,6 +21,9 @@ class LoginChoice : AppCompatActivity() {
 
         userLogin.setOnClickListener {
             startActivity(Intent(this@LoginChoice, LoginActivity::class.java))
+        }
+        workerLogin.setOnClickListener {
+            startActivity(Intent(this@LoginChoice, worker_login::class.java))
         }
     }
 }

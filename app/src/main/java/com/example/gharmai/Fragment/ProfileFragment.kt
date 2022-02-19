@@ -125,8 +125,6 @@ class ProfileFragment : Fragment() {
                         try {
                             if (response.success == true) {
 
-                                val userRepo = UserRepository()
-                                val response = userRepo.deleteuser(ServiceBuilder.userId!!)
                                 try {
 
                                     if (response.success == true) {

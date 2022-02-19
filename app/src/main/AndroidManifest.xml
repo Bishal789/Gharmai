@@ -37,6 +37,9 @@
             android:name=".worker_UI.worker_dashboard"
             android:exported="true">
 
+
+
+
         </activity>
         <activity
             android:name=".worker_UI.worker_login"
@@ -44,15 +47,7 @@
         <activity
             android:name=".worker_UI.worker_register"
             android:exported="true" />
-        <activity
-            android:name=".AdminUI.add_services"
-            android:exported="true" />
-        <activity
-            android:name=".AdminUI.admin_splashscreen"
-            android:exported="true" />
-        <activity
-            android:name=".AdminUI.Admin_dasboard"
-            android:exported="true" />
+
         <activity
             android:name=".InsideUI.salon_women"
             android:exported="true" />
@@ -88,8 +83,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
 
 
         </activity>

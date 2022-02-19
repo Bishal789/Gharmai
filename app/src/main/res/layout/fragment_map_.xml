@@ -7,7 +7,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/map_page"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".worker_UI.worker_fragment.Map_Fragment">
+tools:context=".worker_UI.worker_fragment.user_request">
 
     <ScrollView
         android:layout_width="match_parent"

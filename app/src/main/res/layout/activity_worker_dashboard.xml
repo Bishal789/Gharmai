@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:id="@+id/worker_Dashboard"
-    tools:context=".UI.Dashboard">
+    tools:context=".worker_UI.worker_dashboard">
 
 
 

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.gharmai.R
 
 
-class Map_Fragment : Fragment() {
+class user_request : Fragment() {
 
 
 

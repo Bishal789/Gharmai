@@ -10,7 +10,7 @@ import android.widget.Switch
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.gharmai.R
-import com.example.gharmai.worker_UI.worker_fragment.Map_Fragment
+import com.example.gharmai.worker_UI.worker_fragment.user_request
 
 class worker_dashboard : AppCompatActivity() {
 
@@ -20,7 +20,7 @@ class worker_dashboard : AppCompatActivity() {
     private lateinit var info: TextView
     private lateinit var profile_img:ImageView
 
-    private val HomeFragment = Map_Fragment()
+    private val HomeFragment = user_request()
 //    private val ProfileFragment = Profile_fragment_worker()
 
     private lateinit var container: RelativeLayout

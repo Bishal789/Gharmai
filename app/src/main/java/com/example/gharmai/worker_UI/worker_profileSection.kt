@@ -32,10 +32,6 @@ class worker_profileSection : AppCompatActivity() {
 
         }
 
-
-
-
-
     }
     private fun loadProfilemenu() {
         val popMenu = PopupMenu(this, menuImg)
@@ -62,8 +58,6 @@ class worker_profileSection : AppCompatActivity() {
                         try {
                             if (response.success == true) {
 
-                                val userRepo = UserRepository()
-                                val response = userRepo.deleteuser(ServiceBuilder.userId!!)
                                 try {
 
                                     if (response.success == true) {
