@@ -29,11 +29,11 @@ class ServiceAdapter(
 
     class ServiceViewHolder(view: View): RecyclerView.ViewHolder(view){
 
-    val serviceName: TextView = view.findViewById(R.id.tvServiceName)
-    val serviceDetail: TextView = view.findViewById(R.id.tvServiceDetail)
-    val servicePrice: TextView = view.findViewById(R.id.tvServicePrice)
-    val btnServiceBook: Button = view.findViewById(R.id.btnBookService)
-    val serviceImage: ImageView = view.findViewById(R.id.serviceImage)
+        val serviceName: TextView = view.findViewById(R.id.tvServiceName)
+        val serviceDetail: TextView = view.findViewById(R.id.tvServiceDetail)
+        val servicePrice: TextView = view.findViewById(R.id.tvServicePrice)
+        val btnServiceBook: Button = view.findViewById(R.id.btnBookService)
+        val serviceImage: ImageView = view.findViewById(R.id.serviceImage)
 
     }
 

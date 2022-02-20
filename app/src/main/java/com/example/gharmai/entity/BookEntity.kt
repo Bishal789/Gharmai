@@ -2,6 +2,6 @@ package com.example.gharmai.entity
 
 data class BookEntity(
 
- val service : List<ServiceEntity>? = null,
+ val service : List<ServiceBook>? = null,
  val userID : String? = null
 )

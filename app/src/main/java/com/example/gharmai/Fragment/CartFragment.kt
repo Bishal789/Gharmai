@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gharmai.Adapter.BookedViewAdapter
 import com.example.gharmai.Adapter.ServiceAdapter
+import com.example.gharmai.InsideUI.salon_women
 import com.example.gharmai.R
 import com.example.gharmai.entity.BookEntity
-import com.example.gharmai.entity.ServiceEntity
+import com.example.gharmai.entity.ServiceBook
 import com.example.gharmai.repository.ServiceRepository
-import com.example.gharmai.repository.UserRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,8 +25,9 @@ class CartFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
 
-    companion object{
-        var bookedList: ArrayList<ServiceEntity>? = ArrayList()
+    companion object {
+        var bookedList: ArrayList<ServiceBook>? = ArrayList()
+        var data: BookEntity? = null
 //        private var userList: MutableList<UserEntity>? = ArrayList()
     }
 
@@ -38,16 +39,41 @@ class CartFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_cart, container, false)
 
         recyclerView = view.findViewById(R.id.bookingViewSection)
-        bookingView()
+//        bookingView()
+        serviceView()
 
         return view
+    }
 
+    private fun serviceView() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
 
+                val serviceRepository = ServiceRepository()
+                val serviceResponse = serviceRepository.getAllServiceAPI()
+
+                if(serviceResponse.success == true){
+                    val serviceLists = serviceResponse.data
+                    salon_women.serviceList = serviceLists
+                    val serviceAdapter = serviceLists?.let { ServiceAdapter(requireContext(), it) }
+
+                    withContext(Dispatchers.Main){
+                        recyclerView.layoutManager = LinearLayoutManager(context,
+                            LinearLayoutManager.VERTICAL, false)
+                        recyclerView.adapter = serviceAdapter
+                    }
+                }
+            }catch(ex: Exception){
+                withContext(Dispatchers.Main){
+                    Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
     private fun bookingView() {
 
-        bookedList = ArrayList()
+        bookedList = ArrayList<ServiceBook>()
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -55,24 +81,34 @@ class CartFragment : Fragment() {
                 val serviceRepository = ServiceRepository()
                 val serviceResponse = serviceRepository.getBooking()
 
-                if(serviceResponse.success== true){
-                    val userLists = serviceResponse.data
+                if (serviceResponse.success == true) {
+                    val bookedLists = serviceResponse.bookedItem
+                    val booked = bookedLists?.service
 
-                    if (userLists != null) {
-                        userLists.forEach { item -> userLists.add(item)
+                    if (booked != null) {
+                        for (i in booked) {
+                            bookedList!!.add(
+                                ServiceBook(
+                                    serviceID = i.serviceID,
+                                    serviceName = i.serviceName,
+                                    serviceDetails = i.servicePrice,
+                                    servicePrice = i.servicePrice
+                                )
+                            )
                         }
-                        withContext(Dispatchers.Main){
-                            val serviceAdapter = context?.let { BookedViewAdapter(it, userLists) }
-                            recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-                            recyclerView.adapter = serviceAdapter
-                        }
-                    }else{
-                        Toast.makeText(context, "No data found", Toast.LENGTH_SHORT).show()
                     }
+                    withContext(Dispatchers.Main) {
+//                        val serviceAdapter = context?.let { BookedViewAdapter(it, userLists) }
+                        val serviceAdapter = BookedViewAdapter(requireContext(), bookedList)
+                        recyclerView.layoutManager =
+                            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+                        recyclerView.adapter = serviceAdapter
+                    }
+                } else {
+                    Toast.makeText(context, "No data found", Toast.LENGTH_SHORT).show()
                 }
-
-            }catch (ex: Exception){
-                withContext(Dispatchers.Main){
+            } catch (ex: Exception) {
+                withContext(Dispatchers.Main) {
                     Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show()
                 }
             }

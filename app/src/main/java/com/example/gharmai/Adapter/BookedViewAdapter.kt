@@ -1,5 +1,6 @@
 package com.example.gharmai.Adapter
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import com.example.gharmai.InsideUI.ServiceView
 import com.example.gharmai.R
 import com.example.gharmai.api.ServiceBuilder
 import com.example.gharmai.entity.BookEntity
+import com.example.gharmai.entity.ServiceBook
 import com.example.gharmai.entity.ServiceEntity
 import com.example.gharmai.repository.ServiceRepository
 import com.example.gharmai.repository.UserRepository
@@ -25,16 +27,16 @@ import kotlinx.coroutines.withContext
 
 class BookedViewAdapter(
     private val context: Context,
-    private val serviceList: MutableList<ServiceEntity>
+    private val serviceList: ArrayList<ServiceBook>?
 ): RecyclerView.Adapter<BookedViewAdapter.ServiceViewHolder>() {
 
     class ServiceViewHolder(view: View): RecyclerView.ViewHolder(view){
 
-    val serviceName: TextView = view.findViewById(R.id.bookedServiceName)
-    val serviceDetail: TextView = view.findViewById(R.id.bookedServiceDescription)
-    val servicePrice: TextView = view.findViewById(R.id.bookedServicePrice)
-    val btnServiceDelete: Button = view.findViewById(R.id.buttonDeleteService)
-    val serviceImage: ImageView = view.findViewById(R.id.serviceImage)
+        val serviceName: TextView = view.findViewById(R.id.bookedServiceName)
+        val serviceDetail: TextView = view.findViewById(R.id.bookedServiceDescription)
+        val servicePrice: TextView = view.findViewById(R.id.bookedServicePrice)
+        val btnServiceDelete: Button = view.findViewById(R.id.buttonDeleteService)
+        val serviceImage: ImageView = view.findViewById(R.id.serviceImage)
 
     }
 
@@ -46,10 +48,8 @@ class BookedViewAdapter(
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
 
-
-        val services = serviceList[position]
-        var serviceID = services._id
-        var serviceCategory = services.serviceCategory
+        val services = serviceList!![position]
+        var serviceID = services.serviceID
         println(services)
         holder.serviceName.text = services.serviceName
         holder.serviceDetail.text = services.serviceDetails
@@ -61,10 +61,19 @@ class BookedViewAdapter(
 
         holder.btnServiceDelete.setOnClickListener {
 
-            Toast.makeText(context, "", Toast.LENGTH_SHORT).show()
-//            val intent = Intent(context, ServiceView::class.java)
-//            intent.putExtra("service", services)
-//            context.startActivity(intent)
+            val builder = AlertDialog.Builder(context)
+            builder.setTitle("Unsubscribe Language")
+            builder.setMessage("Are you sure you want to unsubscribe??")
+            builder.setIcon(android.R.drawable.ic_dialog_alert)
+            builder.setPositiveButton("Yes") { _, _ ->
+                serviceDelete(serviceID.toString())
+            }
+            builder.setNegativeButton("No") { _, _ ->
+                Toast.makeText(context, "Cancelled", Toast.LENGTH_SHORT).show()
+            }
+            val alertDialog: AlertDialog = builder.create()
+            alertDialog.setCancelable(false)
+            alertDialog.show()
         }
 
 
@@ -161,10 +170,9 @@ class BookedViewAdapter(
                 }
             }
         }
-
     }
 
     override fun getItemCount(): Int {
-        return serviceList.size
+        return 0
     }
 }
