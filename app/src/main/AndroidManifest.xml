@@ -28,6 +28,9 @@
         android:theme="@style/Theme.Gharmai"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".InsideUI.ServiceView"
+            android:exported="false" />
+        <activity
             android:name=".worker_UI.worker_profileSection"
             android:exported="true" />
         <activity
@@ -35,36 +38,50 @@
             android:exported="true" />
         <activity
             android:name=".worker_UI.worker_dashboard"
-            android:exported="true">
-
-
-
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".worker_UI.worker_login"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".worker_UI.worker_register"
             android:exported="true" />
-
         <activity
             android:name=".InsideUI.salon_women"
             android:exported="true" />
         <activity
+            android:name=".InsideUI.carpenter"
+            android:exported="true" />
+        <activity
+            android:name=".InsideUI.cleaning_disinfection"
+            android:exported="true" />
+        <activity
+            android:name=".InsideUI.electricians"
+            android:exported="true" />
+        <activity
+            android:name=".InsideUI.men_therapy"
+            android:exported="true" />
+        <activity
+            android:name=".InsideUI.plumber"
+            android:exported="true" />
+        <activity
+            android:name=".InsideUI.salon_men"
+            android:exported="true" />
+        <activity
+            android:name=".InsideUI.women_therapy"
+            android:exported="true" />
+        <activity
             android:name=".UI.Dashboard"
-            android:exported="true">
-
-
-
-
-
-        </activity>
-
-
+            android:exported="true"></activity>
         <activity
             android:name=".UI.User_editProfile"
             android:exported="true" />
+
+        <activity
+            android:name=".worker_UI.MapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps">
+
+        </activity>
         <activity
             android:name=".UI.UserRegister"
             android:exported="true" />
@@ -77,14 +94,11 @@
         <activity
             android:name=".UI.SplashScreen"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
     </application>
 

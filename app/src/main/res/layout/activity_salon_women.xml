@@ -8,23 +8,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#95a5a6">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Salon for Women"
-            android:textSize="30dp"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:textColor="@color/black"/>
+            android:text="Salon for Women"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/salonForWomenRecycle"
-        tools:listitem="@layout/user_services_layout"
-        android:layout_marginTop="60dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="694dp"
+        android:layout_marginTop="60dp"
+        tools:listitem="@layout/user_services_layout" />
 
 </RelativeLayout>

@@ -45,7 +45,7 @@ class worker_dashboard : AppCompatActivity() {
 
 
         profile_img.setOnClickListener{
-            startActivity(Intent(this@worker_dashboard, Update_workerProfile::class.java))
+            startActivity(Intent(this@worker_dashboard, worker_profileSection::class.java))
         }
 
 

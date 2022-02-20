@@ -8,22 +8,396 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:background="#95a5a6"
+
         android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Salon for Men"
-            android:textSize="30dp"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:textColor="@color/black"/>
+            android:text="Salon for Men"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
+
+    <RelativeLayout
+        android:id="@+id/menService1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/salonForMenRecycle"
-        android:layout_marginTop="60dp"/>
+        android:layout_height="172dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="349dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="154dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="18dp"
+            android:clipToPadding="false"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="387dp"
+                android:layout_height="142dp"
+                android:layout_marginRight="5dp"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:id="@+id/firstCut1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/serviceImage1"
+                        android:layout_width="136dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:padding="10dp"
+                        android:src="@drawable/shave_men" />
+
+
+                    <TextView
+                        android:id="@+id/tvServiceName1"
+                        android:layout_width="132dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="63dp"
+                        android:gravity="center"
+                        android:text="Shaves"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <!--                <TextView-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_alignParentTop="true"-->
+                    <!--                    android:layout_alignParentEnd="true"-->
+                    <!--                    android:layout_marginTop="75dp"-->
+                    <!--                    android:layout_marginEnd="200dp"-->
+                    <!--                    android:text="See more-"-->
+                    <!--                    android:textColor="#2980b9"-->
+                    <!--                    android:textSize="11dp" />-->
+
+                    <TextView
+                        android:id="@+id/tvServiceDetail1"
+                        android:layout_width="251dp"
+                        android:layout_height="43dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="31dp"
+                        android:layout_marginEnd="0dp"
+                        android:gravity="center"
+                        android:text="The hair off the face with a razor."
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="113dp"
+                        android:layout_marginEnd="209dp"
+                        android:text="NPR"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvServicePrice1"
+                        android:layout_width="94dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="113dp"
+                        android:layout_marginEnd="107dp"
+                        android:text="150"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                    <Button
+                        android:id="@+id/btnBookService1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="0dp"
+                        android:backgroundTint="#54E513"
+                        android:text="Book"
+                        android:textColor="@color/black" />
+
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/menService2"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="179dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="148dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="23dp"
+            android:clipToPadding="false"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="387dp"
+                android:layout_height="142dp"
+                android:layout_marginRight="5dp"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:id="@+id/firstCut2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/serviceImage2"
+                        android:layout_width="136dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:padding="10dp"
+                        android:src="@drawable/waxing_men" />
+
+
+                    <!--                <TextView-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_alignParentTop="true"-->
+                    <!--                    android:layout_alignParentEnd="true"-->
+                    <!--                    android:layout_marginTop="75dp"-->
+                    <!--                    android:layout_marginEnd="200dp"-->
+                    <!--                    android:text="See more-"-->
+                    <!--                    android:textColor="#2980b9"-->
+                    <!--                    android:textSize="11dp" />-->
+
+                    <TextView
+                        android:id="@+id/tvServiceName2"
+                        android:layout_width="175dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="32dp"
+                        android:gravity="center"
+                        android:text="Waxing Services"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvServiceDetail2"
+                        android:layout_width="251dp"
+                        android:layout_height="43dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="31dp"
+                        android:layout_marginEnd="0dp"
+                        android:gravity="center"
+                        android:text="The process of removing unwanted hair from a part of the body by applying wax and peeling off the wax and hairs together."
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="113dp"
+                        android:layout_marginEnd="209dp"
+                        android:text="NPR"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvServicePrice2"
+                        android:layout_width="94dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="113dp"
+                        android:layout_marginEnd="107dp"
+                        android:text="300"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                    <Button
+                        android:id="@+id/btnBookService2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="0dp"
+                        android:backgroundTint="#54E513"
+                        android:text="Book"
+                        android:textColor="@color/black" />
+
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/menService"
+        android:layout_width="match_parent"
+        android:layout_height="169dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="522dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="149dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="21dp"
+            android:clipToPadding="false"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="387dp"
+                android:layout_height="142dp"
+                android:layout_marginRight="5dp"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:id="@+id/firstCut"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/serviceImage"
+                        android:layout_width="136dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:padding="10dp"
+                        android:src="@drawable/hair_dress_men" />
+
+
+                    <TextView
+                        android:id="@+id/tvServiceName"
+                        android:layout_width="132dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="63dp"
+                        android:gravity="center"
+                        android:text="Hair Dresser"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <!--                <TextView-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_alignParentTop="true"-->
+                    <!--                    android:layout_alignParentEnd="true"-->
+                    <!--                    android:layout_marginTop="75dp"-->
+                    <!--                    android:layout_marginEnd="200dp"-->
+                    <!--                    android:text="See more-"-->
+                    <!--                    android:textColor="#2980b9"-->
+                    <!--                    android:textSize="11dp" />-->
+
+                    <TextView
+                        android:id="@+id/tvServiceDetail"
+                        android:layout_width="251dp"
+                        android:layout_height="43dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="39dp"
+                        android:layout_marginEnd="0dp"
+                        android:gravity="center"
+                        android:text="The action or process of washing, cutting, curling, or arranging the hair."
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="113dp"
+                        android:layout_marginEnd="209dp"
+                        android:text="NPR"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvServicePrice"
+                        android:layout_width="94dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="113dp"
+                        android:layout_marginEnd="107dp"
+                        android:text="100"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                    <Button
+                        android:id="@+id/btnBookService"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="0dp"
+                        android:backgroundTint="#54E513"
+                        android:text="Book"
+                        android:textColor="@color/black" />
+
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

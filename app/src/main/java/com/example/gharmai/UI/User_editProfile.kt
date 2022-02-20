@@ -88,7 +88,7 @@ class User_editProfile : AppCompatActivity() {
 
                         val imageUrl = ServiceBuilder.BASE_URL + response.data?.profile_picUser
                         this.let {
-                            Glide.with(this@User_editProfile)
+                            Glide.with(Activity())
                                 .asBitmap()
                                 .load(imageUrl)
                                 .into(cameraPopup)
